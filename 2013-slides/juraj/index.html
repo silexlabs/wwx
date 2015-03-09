@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>WWX 2013 - Macros &amp; Tink &amp; Stuff</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<style>
+			.left {
+				text-align: left;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<section>
+						<h1>Macros</h1>
+						<p>A lot has changed in Haxe 3</p>
+					</section>
+					<section>
+						<h1>A lot has changed</h1>
+						<ul>
+							<li>Macros overhauled</li>
+							<li>Full pattern matching supported</li>
+							<li>Abstract types introduced</li>
+						</ul>
+						<br>
+						<br>
+						<p>... too much for this talk</p>
+					</section>					
+					<section>
+						<h1>Main questions:</h1>
+						<ol>
+							<li>How can I understand all this?</li>
+							<li>What do I need them for?</li>
+						</ol>
+					</section>					
+				</section>
+				<section>
+					<h1>Tinkerbell</h1>
+					<p>Haxe on <del>steroids</del> pixiedust.</p>
+				</section>
+				<section>
+					<h1>Haxe Rationale</h1>
+					<p>Keep syntax simple and lean to be newcomer friendly.</p>
+				</section>
+				<section>
+					<h1>Tink Rationale</h1>
+					<p>Use a rich syntax to say more with less.</p>
+				</section>
+				<section>
+					<section>
+						<h1>Why?</h1>
+						<p>Because we can!</p>			
+					</section>
+					<section>
+						<h1>Why else?</h1>
+						<p>Because at some point, you stop being a newcomer.<br>
+						You have made the long term investment of learning Haxe.<br>
+						You are ready to take in more mind-boggling stuff.</p>
+					</section>
+					<section>
+						<h1>But why this?</h1>
+						<p>Push the language to its limits.<br>
+						Leave the core lean.</p>
+					</section>
+			
+				</section>
+				<section>
+					<h1>But I like Haxe!</h1>
+					<p>We all do. Tink is optional and granular.</p>
+				</section>
+				<section>
+					<section>
+						<h1>The choice is yours</h1>
+						<ul>
+							<li>tink_core </li>
+							<li>tink_macros </li>
+							<li>tink_lang </li>
+							<li>tink_reactive </li>
+							<li>tink_tween </li>
+							<li>tink_markup </li>
+							<li>tinx_node </li>
+							<li>tinx_node_mongo </li>
+							<li>tinx_nw</li>
+							<li>...</li>			
+						</ul>						
+					</section>
+					<section>
+						<h1>So choose</h1>
+						<p>Add functionality granularly.<br>
+						Experience great integration.</p>
+					</section>
+					<section>
+						<h1>Like a feather</h1>
+						<p>Individual tink libs average at about 1000 lines of code.</p>		
+					</section>
+					<section>
+						<h1>A bit of history</h1>
+						<ul>
+							<li>First released about two years ago</li>
+							<li>Core of a one-size-fits-all Framework</li>
+							<li>Now revised for Haxe 3</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h1>At the core ...</h1>
+						<p>... tink is just a Haxe library</p>
+						<ul>
+							<li>Outcome</li>
+							<li>Callback</li>
+							<li>Future</li>
+							<li>Surprise</li>
+							<li>Signal</li>			
+						</ul>
+					</section>
+					<section>
+						<h1>Outcome</h1>
+						<p>All code can fail. Without exception.</p>
+						<div class="fragment">
+						<p class="left">Let' formalize that:</p>
+<pre><code>enum Outcome&lt;Data, Failure> {
+	Success(data:Data);
+	Failure(failure:Failure);
+}</code></pre></div>	
+						<div class="fragment">
+						<p class="left">Classical approach:</p>
+<pre><code>try {
+	var data = haxe.Json.parse('invalid');
+	//do something
+}
+catch(e:Dynamic) {
+	trace('invalid JSON $e);
+}</code></pre></div>
+					<div class="fragment">
+					<p class="left">Tink way:</p>
+<pre><code>switch haxe.Json.parse('invalid') {
+	case Success(data): //do something
+	case Failure(f): trace('invalid JSON $e);
+}</code></pre></div>
+					</section>
+					<section>
+						<h1>Outcome</h1>
+						<br>						
+						<p class="left">Dealing with outcomes:</p>
+						<br>
+<pre><code>using tink.core.types.Outcome;
+
+var outcome = 
+	getJson('config.json')
+	.map(function (o) return o.color);
+	
+outcome.sure();//will get the color or fail
+
+var outcome = 
+	getJson('config.json')
+	.orTry(getJson('altconfig.json'))
+	.map(function (o) return o.color);
+
+var color = outcome.orUse(0xFF0000);
+</code></pre>
+					</section>
+					<section>
+						<h1>Callbacks</h1>
+						<p>We can formalize those as well.</p>
+						<div class="fragment">
+						<p class="left">Callback:</p>
+<pre><code>abstract Callback&lt;T> from T->Void from Void->Void {
+	function invoke(data:T):Void;
+}
+</code></pre></div>		<div class="fragment">
+						<p class="left">CallbackLink:</p>
+<pre><code>abstract CallbackLink {
+	function dissolve():Void;
+}</code></pre></div>
+						<div class="fragment">
+						<p class="left">CallbackList:</p>
+<pre><code>abstract CallbackList&lt;T> {
+	var length(get, never):Int;
+	function new():Void;
+	function add(cb:Callback&lt;T>):CallbackLink;
+	function invoke(data:T):Void;
+	function clear():Void;
+}</code></pre></div>
+					</section>
+					<section>
+						<h1>Future</h1>
+						<div class="fragment">
+						<p class="left">A glimpse of it:</p>
+<pre><code>abstract Future&lt;T> {
+	function get(cb:Callback&lt;T>):CallbackLink;
+	function map&lt;A>(f:T->A):Future&lt;A>;
+	function flatMap&lt;A>(f:T->Future&lt;A>):Future&lt;A>;
+}</code></pre>	
+						</div>
+						<div class="fragment">
+						<p class="left">Example:</p>
+<pre><code>getJson('config.json')
+	.flatMap(
+		function (config:{ dataPath:String}) 
+			return getJson(dataPath)
+	).get(
+		function (data) trace(data)
+	);</code></pre></div>
+						<div class="fragment">
+						<p class="left">Roll your own:</p>
+<pre><code>class FutureOp&lt;T> {
+	function new():Void;
+	function asFuture():Future&lt;T> return future;
+	function invoke(result:T):Bool;
+}</code></pre></div>
+				</section>
+					<section>
+						<h1>Surprise</h1>
+						<p>Becomes straight forward to express:</p>
+						<pre><code>typedef Surprise&lt;D,F> = Future&lt;Outcome&lt;D, F>>;</code></pre>
+					</section>
+					<section>
+						<h1>Signal</h1>
+						<p class="left">Signal:</p>
+<pre><code>abstract Signal&lt;T> {
+	function watch(cb:Callback&lt;T>):CallbackLink;
+	function next():Future&lt;T>
+	function map&lt;A>(f:T->A):Signal&lt;A>;
+	function dike():Signal&lt;T>;
+}</code></pre>						
+<p class="left">Noise:</p>
+<pre><code>enum Noise { Noise; }</code></pre>		
+					</section>
+				</section>
+				<section>
+					<h1>And then came macros</h1>
+					<p>And tink_macros tried making them bearable ... </p>
+					<p class="fragment">... but that's history :)</p>
+				</section>
+				<section>
+					<section>
+						<h1>A new language</h1>
+						<p>Meet tink_lang</p>						
+					</section>
+					<section>
+						<h1>Usage</h1>
+						<pre><code>class MyClass implements tink.lang.Cls { ... }</code></pre>
+					</section>
+					<section>
+						<h1>Sugar everywhere!</h1>
+						<h3>At Expression Level</h3>
+						<ul>
+							<li>loop magic</li>
+							<li>trailing callbacks</li>
+							<li>short lambdas</li>
+							<li>short bind</li>
+							<li>watching</li>
+							<li>pipelining</li>
+							<li>escaping</li>
+						</ul>
+					</section>
+					<section>
+						<h1>Sugar everywhere!</h1>
+						<h3>At Class Level</h3>
+						<ul>
+							<li>initialization </li>
+							<li>forwarding </li>
+							<li>properties </li>
+							<li>signals & futures</li>
+							<li>partial implementations </li>
+						</ul>
+					</section>
+					<section>
+					
+					<h1>Loop magic</h1>
+<pre class="fragment"><code>//abitrary steps:
+for (i += .2 in 0...10) {}</code></pre>
+<pre class="fragment"><code>//backward:
+for (i -= 1 in 100...0) {}</code></pre>
+<pre class="fragment"><code>//key-value-pair iteration:
+for (key => val in someMap) {}</code></pre>
+<pre class="fragment"><code>//parallel looping:
+for ([foo in foos, bar in bars]) {}</code></pre>
+<pre class="fragment"><code>//with defaults:
+for ([foo in foos || genericFoo, bar in bars]) {}</code></pre>
+				</section>
+				<section>
+					<h1>Trailing callbacks</h1>
+					<pre><code>someAsyncCall(p1, p2) => handler
+-->  someAsyncCall(p1, p2, handler)</code></pre>
+				</section>				
+				<section>
+					<h1>Short lambdas</h1>
+<div class="fragment"><p>With return:</p>
+<pre><code>[x] => x + 1
+-->  function (x) return x + 1
+
+@f(x) if (x > 0) x else -x
+-->  function (x) return if (x > 0) x else -x;
+</code></pre>
+</div>
+<div class="fragment"><p>Without it:</p>
+<pre><code>![x] => foo = x
+-->  function (x) foo = x;
+
+@do(x) => x.doSomething()
+-->  function (x) x.doSomething()
+</code></pre>
+<div class="fragment">
+<p>Put together</p>
+<pre><code>myButton.on('click') => @do {
+	step1;
+	step2;
+	step3;
+}
+</code></pre>	
+</div>
+
+					</section>
+<section>
+					<h1>Short bind</h1>
+					<p>Pretty simple:</p>
+					<pre><code>mc.addChildAt(_, 0);
+-->  mc.addChildAt.bind(_, 0);</code></pre>
+				</section>
+				<section>
+					<h1>Watching</h1>
+<div class="fragment"><p class="left">Do it @when:</p>
+<pre><code>@when(someSignal) handler;
+@when(someFuture) handler;
+@when(someSignal.next()) handler;
+</code></pre>
+<div class="fragment"><p class="left">Example:</p>
+<pre><code>@when(myButton.clicked) @do trace('clicked');</code></pre>
+<div class="fragment"><p class="left">Work with old events:</p>
+<pre><code>@when(myButton['click']) @do trace('clicked');</code></pre>
+<div class="fragment"><p class="left">Do it @until:</p>
+<pre><code>@when(myButton['mousedown']) @do 
+	@until(stage['mouseup'])
+		@when(stage['mousemove']) @do trace('drag')
+</code></pre>
+<div class="fragment"><p class="left">Do it @with:</p>
+<pre><code>@with(myConfirm) {
+	@when(canceled) @do trace('canceled'); 
+	@when(confirmed) @do trace('confirmed'); 
+}</code></pre>
+
+</div>
+				</section>
+				<section>
+					<h1>Pipelining</h1>
+					<p>Because asynchronous stuff is at least as tedious, as it is cool.</p>
+					<p class="fragment">It would be nice to make it more manageable.</p>
+					<div class="fragment">
+						<p class="left ">The basic idea:</p>
+<pre><code>{
+	result1: operation1,
+	result2: operation2,
+	result3: operation3,
+} => {
+	result4: operation4(result1, result2);
+} => doSomething(result3, result4, result1);
+</code></pre>	
+					</div>
+					<div class="fragment">
+						The beauty of it: <span class="fragment">whether or not it is asynchronous doesn't matter</span>
+					</div>
+				</section>
+				<section>
+					<h1>Too much sugar?</h1>
+					<p>Syntax sugars can sometimes be in the way</p>
+					<div class="fragment">
+						<p class="left">Go diet:</p>
+						<pre><code>@:diet for (key => val in map) {}</code></pre>
+					</div>
+				</section>
+				<section>
+					<h1>Initializing</h1>
+<pre><code>class Foo implements tink.lang.Cls {
+	var a = [3, 4, 5];
+	var b:Int = _;
+}</code></pre>
+				</section>	
+				<section>
+					<h1>Forwarding</h1>
+<pre><code>class Stack&lt;T> implements tink.lang.Cls {
+	@:forward(push, pop, length, iterator) var data:Array&lt;T> = [];	
+}</code></pre>
+				</section>	
+				<section>
+					<h1>Properties</h1>
+<pre><code>class Foo implements tink.lang.Cls {
+	@:prop var a = [3, 4, 5];
+	var b:Int = _;
+}</code></pre>
+				</section>
+				<section>
+				 	<h1>Futures and Signals</h1>
+<pre><code>class Foo implements tink.lang.Cls {
+	@:signal var onSay:String;
+	@:signal var onShrug;
+	@:signal var onEcho:String = 
+		this.onSay.map(
+			[s] => [for (i in 0...3) 
+				s.toLowerCase()
+			].join(' ')
+		)
+	@:future var died:Outcome&lt;Heaven, Hell>;
+}</code></pre>
+				</section>
+				<section>
+				 	<h1>Partial implemententations</h1>
+<pre><code>interface Enumerable&lt;T> implements tink.lang.Cls {
+	function forEach(f:T->Void):Void;
+	function filter(f:T->Bool):Array&lt;T> {
+		var ret = [];
+		forEach(function (elt:T)
+			if (f(elt)) ret.push(elt)
+		);
+	}
+}</code></pre>
+				</section>	
+			</section>
+			<section>
+				<h1>Conclusion</h1>
+			</section>
+		</div>	
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: 'beige',
+				transition: 'linear',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					//{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					//{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					//{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					//{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					//{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					//{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

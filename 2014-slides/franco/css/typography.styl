@@ -1,0 +1,81 @@
+body
+  font-family 'PT Serif', georgia, serif
+  font-size 2em
+
+h1, h2, h3
+  font-weight bold
+  text-align center
+
+h1
+  font-size 4em
+  text-align center
+  color #333
+h1
+  font-size 2em
+
+h2
+  font-size 1.5em
+
+h3
+  font-size 1.2em
+
+ul
+  li
+    font-size 0.8em
+
+ul.notes
+  li
+    font-size 0.5em
+
+i.fa.fa-twitter
+  color #55acee
+
+blockquote
+  text-align center
+  margin 1em 0 1.5em
+  padding 10px
+  background-color rgba(0,0,0,0.05)
+  font-style italic
+  quotes "\201C  " "  \201D"
+  text-shadow 1px 1px 1px rgba(255,255,255,0.8)
+  position relative
+
+blockquote:before, blockquote:after
+  font-weight bold
+  line-height 0
+  margin-top 1em
+  color white
+  text-shadow 1px 1px 1px rgba(0,0,0,0.2)
+
+blockquote:before
+  content open-quote
+blockquote:after
+  content close-quote
+
+cite
+  font-style normal
+  position absolute
+  bottom -1em
+  right 0
+  text-align right
+  font-size 0.7em
+  color #999
+
+cite:before
+  content "\2014 \2009"
+
+a
+  text-decoration none
+  color #069
+  &:hover
+    text-decoration underline
+
+p
+  text-align center
+
+pre
+  padding 0.5em
+  font-size 60%
+  overflow auto
+  max-height 430px
+  font-family menlo, monospace

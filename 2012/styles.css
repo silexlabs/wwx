@@ -1,0 +1,54 @@
+* {padding:0px;margin:0px;}
+body{font-family:sans-serif;background:#e6e6e6 url('img/background.png');}
+h1{color:white;font-size:24pt;}
+h1 img {position:relative; top:6px;}
+h2{color:#f58220;font-size:1.4em;padding-top:0.5em;}
+h3{font-size:1.2em;padding-top:0.5em;}
+p{font-size:1em;line-height:1.5em;padding-top:0.3em;}
+a{color:#ff5000;text-decoration:none;}
+a:hover{text-decoration:underline;}
+li{list-style-type: none;padding-bottom:0.5em;}
+#strip{background:#2f333b url('img/strip.png') repeat-x;color:white;border-bottom:solid 1px white;}
+#header{height:76px;width:940px;position:relative;margin:0px auto;}
+#header a{color:white;}
+#header .strip-left{position:absolute;left:-80px;width:80px;height:76px;background:url('img/strip-left.png');}
+#header .strip-right{position:absolute;right:-80px;width:80px;height:76px;background:url('img/strip-right.png');}
+#title{position:absolute;left:40px;bottom:12px;}
+#outgoing{position:absolute;right:40px;top:5px;font-size:0.6em;text-transform:uppercase;}
+#outgoing a{color:#CCC !important;}
+#outgoing a:hover{color:white !important;}
+#navigation{font-size:1.2em;position:absolute;right:40px;bottom:5px;}
+
+#content {width:948px;margin:40px auto;}
+#content .top {height:20px;background:url('img/content-top.png');}
+#content .middle {background:url('img/content-middle.png');}
+#content .bottom {height:20px;background:url('img/content-bottom.png');}
+
+#content .section {margin:0px 4px;padding:14px 40px 30px;}
+#content .divider {margin:30px -38px 8px -38px;height:12px;background:url('img/divider.png') no-repeat;}
+#content .map {position:relative;padding-left:6px; }
+#content .shadow {width:936px;height:8px;background:url('img/shadow.png') repeat-x;}
+
+#banner{position:relative;height:210px;background:url('img/banner.png');color:white;}
+#banner .padded{padding:20px 40px;}
+#banner .register{position:absolute;right:40px;top:110px;display:inline-block;width:163px;height:42px;background:url('img/register.png');}
+#banner .register:hover{background-position:0px -42px;}
+#banner .attribution{color:white;font-size:0.6em;}
+#banner .attribution a{color:white;}
+#banner .drop {text-shadow: #000 0px 2px 4px;}
+
+#photos{float:right;margin-right:-36px;width:140px;height:140px;background-color:red;}
+
+#content .aside {margin:0px 4px;background:url('img/aside-middle.png');color:white;}
+#content .aside-top{height:14px;background:url('img/aside-top.png') repeat-x;}
+#content .aside-middle{padding:16px 40px;}
+#content .aside-bottom{height:14px;background:url('img/aside-bottom.png') repeat-x;}
+
+#footer{text-align:center;padding-top:20px;}
+#haxe{display:inline-block;width:51px;height:52px;background:url('img/haxe-logo.png');}
+#haxe:hover{background-position:-50px 0px;}
+.speaker {clear:both;}
+.speaker img {float:right;width:60px;height:60px;padding-right:20px;padding-bottom:10px;}
+
+.speakers img {float:left; padding-right:20px; padding-top:12px;}
+.sponsors a { padding:8px; }

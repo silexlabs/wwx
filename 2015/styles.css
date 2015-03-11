@@ -2,7 +2,7 @@
 body{font-family:sans-serif;background: #D3D3D3;}
 h1{color:white;font-size:28pt;font-family:"arial black";}
 h1 img {vertical-align: middle; margin-top: -7px;}
-h2{color:#f58220;font-size:1.4em;line-height: 2em;padding-top:1.5em;}
+h2{color:#f58220;font-size:1.4em;line-height: 2em;padding-top:1.5em;display: inline-block;}
 h3{font-size:1.2em;padding-top:0.5em;}
 p{font-size:1em;line-height:2em;padding-top:0.3em;}
 a{color:#ff5000;text-decoration:none;}
@@ -62,6 +62,19 @@ li{list-style-type: none;padding-bottom:0.5em;}
 
 #photos{float:right;margin-right:-36px;width:140px;height:140px;background-color:red;}
 
+#ulule-widget p{
+  line-height: 1.3em;
+  font-size: 0.9em;
+  text-align: center;
+}
+#ulule-widget{
+  float: right;
+  width: 40%;
+  min-width: 250px;
+  max-width: 300px;
+  padding-top: 2.5em;
+  max-height: 380px;
+}
 #content .aside {margin:0;background:url('img/aside-middle.png');color:white;}
 #content .aside-top{height:14px;background:url('img/aside-top.png') repeat-x;}
 #content .aside-middle{padding:16px 4%;}

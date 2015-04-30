@@ -3,7 +3,7 @@ body{font-family:sans-serif;background: #D3D3D3;}
 h1{color:white;font-size:28pt;font-family:"arial black";}
 h1 img {vertical-align: middle; margin-top: -7px;}
 h2{color:#f58220;font-size:1.4em;line-height: 2em;padding-top:1.5em;display: inline-block;}
-h3{font-size:1.2em;padding-top:0.5em;}
+h3{font-size:1.2em;padding-top:0.5em;margin-top: 1em}
 p{font-size:1em;line-height:2em;padding-top:0.3em;}
 a{color:#ff5000;text-decoration:none;}
 a:hover{text-decoration:underline;}
@@ -48,7 +48,11 @@ li{list-style-type: none;padding-bottom:0.5em;}
 #content .bottom {height:20px;width:100%;max-width:948px;}
 
 #content .section {margin:0px 4px;padding:25px 40px 0;}
-#content .divider {}
+#content .divider {clear: both;
+height: 1px;
+background-color: grey;
+top: 20px;
+position: relative;}
 #content .map {position:relative;padding: 0;}
 
 #banner{position:relative;width:100%;/*background:url('img/wwx2013-logo.png');color:white;background-repeat:no-repeat;background-position:center top;background-size: contain;*/}
@@ -90,7 +94,7 @@ li{list-style-type: none;padding-bottom:0.5em;}
 .speaker h3 {color:#f58220;}
 
 /*.speakers img {float:left; padding-right:20px; padding-top:12px;}*/
-.speaker-image {float:left; margin-right:20px; margin-top:12px; width:100px; height:100px; background-position:center center; background-repeat:no-repeat; background-size:cover;}
+.speaker-image {float:left; margin-right:20px; margin-top:2em; width:100px; height:100px; background-position:center center; background-repeat:no-repeat; background-size:cover;}
 .sponsors { margin-top:10px; }
 .sponsors a { padding:8px; }
 .sponsors img { margin-top:15px; }

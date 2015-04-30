@@ -66,19 +66,8 @@ position: relative;}
 
 #photos{float:right;margin-right:-36px;width:140px;height:140px;background-color:red;}
 
-#ulule-widget p{
-  line-height: 1.3em;
-  font-size: 0.9em;
-  text-align: center;
-}
-#ulule-widget{
-  float: right;
-  width: 40%;
-  min-width: 250px;
-  max-width: 300px;
-  padding-top: 2.5em;
-  max-height: 380px;
-}
+.center{display:block;margin-right:auto;margin-left:auto;}
+small.center{text-align: center;color: #FF5000;margin-bottom: 2em;}
 #content .aside {margin:0;background:url('img/aside-middle.png');color:white;}
 #content .aside-top{height:14px;background:url('img/aside-top.png') repeat-x;}
 #content .aside-middle{padding:16px 4%;}

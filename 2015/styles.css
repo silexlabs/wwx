@@ -45,7 +45,7 @@ li{list-style-type: none;padding-bottom:0.5em;}
 #content {width:100%;max-width:948px;margin:40px auto;background: white;box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);border-radius: 5px;overflow: hidden;}
 #content .top {height:20px;width:100%;max-width:948px;}
 #content .middle {}
-#content .bottom {height:20px;width:100%;max-width:948px;}
+#content .bottom {height:20px;width:100%;max-width:948px;clear:both;}
 
 #content .section {margin:0px 4px;padding:25px 40px 0;}
 #content .divider {clear: both;

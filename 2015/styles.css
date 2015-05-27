@@ -87,3 +87,5 @@ small.center{text-align: center;color: #FF5000;margin-bottom: 2em;}
 .sponsors { margin-top:10px; }
 .sponsors a { padding:8px; }
 .sponsors img { margin-top:15px; }
+
+#irc {background-color: #EFEFEF; display: block; margin: 0 auto 20px;}

@@ -52,11 +52,8 @@
 					<p>The 5<sup>th</sup> edition of the WWX is now live! If you are not in Paris right now, it's not a reason to miss it, so we proudly give you, the live stream!</p>
 					<iframe src="https://air.mozilla.org/world-wide-haxe-conference-2015/video/" height="550" width="100%" frameborder="0" allowfullscreen></iframe>
 					<div class="divider"></div> -->
-					<h2>Friday is coming!</h2>
-					<p>Friday the first of you will arrive in Paris and maybe you're not very sure of what you will/should do.</p>
-					<p>Know that there is no official planning for Friday and you're free to spend your time as you want to. On our side, we'll be at Mozilla from <b>11am to 7pm</b> to meet you, show you around and answer all your questions. So feel free to come chat with us, even help us setting up the place or just take a break in the luxury rooms at Mozilla.</p>
-					<p>If you want to meet up some attendees, or create a group to visit Paris together, you can either use Twitter with the <a href="https://twitter.com/hashtag/WWX2015" target="_blank">#WWX2015</a> hashtag or the IRC channel (wwx2015) we create for the conference. If you have an iPhone or an Android, it could be a good thing to download the apps (<a href="https://itunes.apple.com/us/app/turboirc/id583000012?mt=8#" target="_blank">iOS</a> and <a href="https://play.google.com/store/apps/details?id=org.yaaic" target="_blank">Android</a>). And if you don't, you can use the <a href="irc.html">web client</a>!</p>
-					<p>Either ways, we're always here to help you, so feel free to send us a mail, call us or send a homing pigeon!</p>
+					<h2>Videos are editing<span id='waiting'>...</span></h2>
+					<p>WWX2015 videos are coming really really soon. If you want to be sure to be the first to see them, follow us on <a href="https://www.youtube.com/user/Silexlabs" target="_blank">Youtube</a>, <a href="https://twitter.com/silexlabs" target="_blank">Twitter</a> or on <a href="http://www.silexlabs.org" target="_blank">silexlabs.org</a> right now!</p>
 					<div class="divider"></div>
 					<h2 data-bn-editable=""  spellcheck="false">The Fifth International Haxe Conference</h2>
 					<p spellcheck="false" data-bn-editable="" ><span style="background-color:transparent; font-family:arial; ">The wwx2015, the fifth Worldwide Haxe Conference, will take place in Paris from May 29th May to 1st June 2015. </span>
@@ -314,5 +311,18 @@
 			<a id="haxe" href="http://haxe.org"></a>
 		</div>
 	</div>
+	<script type="text/javascript">
+		window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+		function wait(){
+			var span = document.getElementById('waiting');
+			switch (span.textContent) {
+				case '...':
+					span.textContent = '';
+					break;
+				default: span.textContent = span.textContent + '.';
+			}
+		};
+		window.setInterval(wait, 500);
+	</script>
 </body>
 </html>

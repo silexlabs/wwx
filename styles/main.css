@@ -1,0 +1,216 @@
+*
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+body
+{
+	font-family: sans-serif;
+	background: #D3D3D3;
+}
+
+a
+{
+	color: #ff5000;
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+header
+{
+	background: #3F434E url('/images/header.png') repeat-x bottom left;
+	color: white;
+	border-bottom: solid 1px white;
+	height: 90px;
+}
+
+header img
+{
+	float: left;
+	top: 13px;
+	left: 25px;
+	position: relative;
+}
+
+nav
+{
+	text-align: right;
+	line-height: 90px;
+	padding-right: 25px;
+}
+
+.nav, footer, .center
+{
+	text-align: center;
+}
+
+nav li, .nav li
+{
+	display: inline-block;
+}
+
+.content
+{
+	width: 90%;
+	max-width: 984px;
+	margin: 0 auto;
+}
+
+p
+{
+	line-height: 1.8em;
+	text-align: justify;
+}
+
+.box
+{
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+	margin: 40px auto;
+	padding: 25px 0;
+}
+
+.box p
+{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+#banner
+{
+	position: relative;
+	width: 100%;
+	top: -20px;
+}
+
+h1
+{
+	margin-bottom: 25px;
+	font-size: 3em;
+	font-variant: small-caps;
+}
+
+h1, h2
+{
+	color: #f58220;
+}
+
+h2, h3
+{
+	padding-left: 25px;
+}
+
+h2
+{
+	font-size: 1.4em;
+	line-height: 2em;
+	padding-top: 0.5em;
+}
+
+h3
+{
+    font-size: 1.2em;
+    padding-top: 0.5em;
+}
+
+header a, h3 a
+{
+	color: white;
+}
+
+.about
+{
+	text-align: center;
+}
+
+.video
+{
+	padding: 25px;
+}
+
+.aside
+{
+	background: url('/images/aside-middle.png') repeat;
+	color: white;
+	margin-top: 40px;
+	margin-bottom: 15px;
+}
+
+.aside-top
+{
+	height: 14px;
+	background: url('/images/aside-top.png') repeat-x;
+}
+
+.aside-bottom
+{
+	height: 14px;
+	background: url('/images/aside-bottom.png') repeat-x;
+	margin-top: 25px;
+}
+
+.box70, .box30
+{
+	vertical-align: top;
+}
+
+.box70
+{
+	display: inline-block;
+	width: 69.5%;
+}
+
+.box30
+{
+	display: inline-block;
+	width: 29.5%;
+}
+
+.speaker img
+{
+    float: right;
+    width: 60px;
+    height: 60px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+#haxe
+{
+	display: inline-block;
+	width: 51px;
+	height: 52px;
+	background: url('/images/haxe-logo.png');
+}
+
+#haxe:hover
+{
+	background-position: -50px 0px;
+}
+
+.map
+{
+	padding: 25px 0;
+	position: relative;
+}
+
+.shadow
+{
+    width: 100%;
+    height: 8px;
+    background: url("/images/shadow.png") repeat-x scroll 0% 0%;
+    top: -3px;
+	position: relative;
+}
+
+.shadow-top
+{
+	position: absolute;
+	top: 25px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>World Wide Haxe Conference{% if page.year %} {{ page.year }}{% endif %}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="stylesheet" href="/styles/main.css" type="text/css">
+		
+		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+		<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19608894-15']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="content">
+				
+				<a href="/{% if page.year %}{{ page.year }}/{% endif %}"><img src="/images/logo.png" />{% if page.year %}<img src="/images/{{ page.year }}/year.png" />{% endif %}</a>
+			
+				<nav>
+					<ul>
+						<li><a href="/">About</a></li>
+						<li>&nbsp;&bull;&nbsp;</li>
+						<li><a href="/news/">News</a></li>
+						<li>&nbsp;&bull;&nbsp;</li>
+						<li><a href="/editions/">Editions</a></li>
+						<li>&nbsp;&bull;&nbsp;</li>
+						<li><a href="/gallery/">Gallery</a></li>
+						<li>&nbsp;&bull;&nbsp;</li>
+						<li><a href="/videos/">Videos</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<div class="content box">
+			{% if page.year %}
+			<img id="banner" src="/images/{{ page.year }}/banner.png" />
+			
+			<ul class="nav">
+				<li><a href="/{{ page.year }}/">About</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				<li><a href="/{{ page.year }}/#speakers">Speakers</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				<li><a href="/{{ page.year }}/location/">Location</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				<li><a href="/{{ page.year }}/schedule/">Schedule</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				<li><a href="/gallery/#{{ page.year }}">Gallery</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				<li><a href="/{{ page.year }}/live/">Live</a></li>
+			</ul>
+			{% endif %}
+			
+			{{ content }}
+			
+			<h2>Proudly Hosted by Silex Labs</h2>			
+			<p>
+				<a href="http://silexlabs.org/">Silex Labs</a>, non profit organization, is proud to be in charge of federating the Haxe community for this major event.
+			</p>
+			
+			{% if page.year %}
+			<h2>Sponsors</h2>
+			
+			<div class="center">
+				<img src="/images/{{ page.year }}/sponsors.png" />
+			</div>
+			{% endif %}
+		</div>
+		
+		<footer>
+			<a id="haxe" href="http://haxe.org"></a>
+		</footer>
+		
+		<script charset="utf-8" src="/scripts/emails.js"></script>
+	</body>
+</html>

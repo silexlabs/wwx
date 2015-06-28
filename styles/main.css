@@ -85,6 +85,11 @@ p
 	padding-right: 25px;
 }
 
+.box ul
+{
+	padding-left: 40px;
+}
+
 #banner
 {
 	position: relative;

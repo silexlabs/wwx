@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<h2>{{ page.speaker }}</h2>
+
+<h3>Bio</h3>
+<p>
+	{{ content }}
+</p>
+
+{% capture tag %}{{ page.speaker | downcase | replace:' ','-' }}{% endcapture %}
+
+<h3>Talks</h3>
+<ul>
+	{% for p in site.pages %}
+		{% if p.categories | size > 0 %}
+			{% capture t %}{{ p.categories | first }}{% endcapture %}
+			{% if t == tag %}
+				<li>WWX{{ p.year }}: <a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+</ul>

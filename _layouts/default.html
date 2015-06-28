@@ -4,8 +4,8 @@
 		<title>World Wide Haxe Conference{% if page.year %} {{ page.year }}{% endif %}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="stylesheet" href="/styles/main.css" type="text/css">
+		<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
+		<link rel="stylesheet" href="{{ site.baseurl }}/styles/main.css" type="text/css">
 		
 		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
 		<script type="text/javascript">
@@ -23,19 +23,19 @@
 		<header>
 			<div class="content">
 				
-				<a href="/{% if page.year %}{{ page.year }}/{% endif %}"><img src="/images/logo.png" />{% if page.year %}<img src="/images/{{ page.year }}/year.png" />{% endif %}</a>
+				<a href="{{ site.baseurl }}/{% if page.year %}{{ page.year }}/{% endif %}"><img src="{{ site.baseurl }}/images/logo.png" />{% if page.year %}<img src="{{ site.baseurl }}/images/{{ page.year }}/year.png" />{% endif %}</a>
 			
 				<nav>
 					<ul>
-						<li><a href="/">About</a></li>
+						<li><a href="{{ site.baseurl }}/">About</a></li>
 						<li>&nbsp;&bull;&nbsp;</li>
-						<li><a href="/news/">News</a></li>
+						<li><a href="{{ site.baseurl }}/news/">News</a></li>
 						<li>&nbsp;&bull;&nbsp;</li>
-						<li><a href="/editions/">Editions</a></li>
+						<li><a href="{{ site.baseurl }}/editions/">Editions</a></li>
 						<li>&nbsp;&bull;&nbsp;</li>
-						<li><a href="/gallery/">Gallery</a></li>
+						<li><a href="{{ site.baseurl }}/gallery/">Gallery</a></li>
 						<li>&nbsp;&bull;&nbsp;</li>
-						<li><a href="/videos/">Videos</a></li>
+						<li><a href="{{ site.baseurl }}/videos/">Videos</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -43,20 +43,20 @@
 		
 		<div class="content box">
 			{% if page.year %}
-			<img id="banner" src="/images/{{ page.year }}/banner.png" />
+			<img id="banner" src="{{ site.baseurl }}/images/{{ page.year }}/banner.png" />
 			
 			<ul class="nav">
-				<li><a href="/{{ page.year }}/">About</a></li>
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/">About</a></li>
 				<li>&nbsp;&bull;&nbsp;</li>
-				<li><a href="/{{ page.year }}/#speakers">Speakers</a></li>
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/#speakers">Speakers</a></li>
 				<li>&nbsp;&bull;&nbsp;</li>
-				<li><a href="/{{ page.year }}/location/">Location</a></li>
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/location/">Location</a></li>
 				<li>&nbsp;&bull;&nbsp;</li>
-				<li><a href="/{{ page.year }}/schedule/">Schedule</a></li>
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/schedule/">Schedule</a></li>
 				<li>&nbsp;&bull;&nbsp;</li>
-				<li><a href="/gallery/#{{ page.year }}">Gallery</a></li>
+				<li><a href="{{ site.baseurl }}/gallery/#{{ page.year }}">Gallery</a></li>
 				<li>&nbsp;&bull;&nbsp;</li>
-				<li><a href="/{{ page.year }}/live/">Live</a></li>
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/live/">Live</a></li>
 			</ul>
 			{% endif %}
 			
@@ -71,7 +71,7 @@
 			<h2>Sponsors</h2>
 			
 			<div class="center">
-				<img src="/images/{{ page.year }}/sponsors.png" />
+				<img src="{{ site.baseurl }}/images/{{ page.year }}/sponsors.png" />
 			</div>
 			{% endif %}
 		</div>
@@ -80,6 +80,6 @@
 			<a id="haxe" href="http://haxe.org"></a>
 		</footer>
 		
-		<script charset="utf-8" src="/scripts/emails.js"></script>
+		<script charset="utf-8" src="{{ site.baseurl }}/scripts/emails.js"></script>
 	</body>
 </html>

@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+{{ content }}
+
+{% include aside-start.html %}
+	
+	<div class="box70">
+		<a name="speakers"></a>
+		<h2>Speakers</h2>
+		{% for p in site.pages %}
+			{% if p.year == page.year %}
+				{% if p.layout == "talk" %}
+					<div class="speaker">
+						{% capture s %}{{ p.authors | size }}{% endcapture %}
+						{% capture sl %}{{ p.authors | last }}{% endcapture %}
+						
+						{% for a in p.authors %}
+							<img src="{{ site.baseurl }}/images/speakers/{{ a | slugify }}-small.jpg" />
+						{% endfor %}
+						
+						<h3>
+						{% for a in p.authors %}
+							<a href="{{ site.baseurl }}/speakers/{{ a | slugify }}">{{ a }}</a>
+							{% if s != "1" %}
+								{% if a != sl %}
+									and
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+						</h3>
+					
+						<p>
+							{{ p.title }}
+							<br />
+							<a href="{{ p.url | replace:'index.html','' }}">more...</a>
+						</p>
+					</div>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</div>
+	
+	<div class="box30">
+		<h2>Tweets</h2>
+		
+		{% include tweets.html %}
+	</div>
+	
+{% include aside-end.html %}
+
+<h2 style="clear: both">Proudly Hosted by Silex Labs</h2>
+<p>
+	<a href="http://silexlabs.org/">Silex Labs</a>, non profit organization, is proud to be in charge of federating the Haxe community for this major event.
+</p>
+
+<h2>Sponsors</h2>
+
+<div class="center">
+	<img src="{{ site.baseurl }}/images/{{ page.year }}/sponsors.png" />
+</div>

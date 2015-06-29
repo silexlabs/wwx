@@ -23,7 +23,7 @@
 		<header>
 			<div class="content">
 				
-				<a href="{{ site.baseurl }}/{% if page.year %}{{ page.year }}/{% endif %}"><img src="{{ site.baseurl }}/images/logo.png" />{% if page.year %}<img src="{{ site.baseurl }}/images/{{ page.year }}/year.png" />{% endif %}</a>
+				<a href="{{ site.baseurl }}/{% if page.year %}{{ page.year }}/{% endif %}"><img src="{{ site.baseurl }}/images/logo.png" /></a>
 			
 				<nav>
 					<ul>
@@ -61,19 +61,6 @@
 			{% endif %}
 			
 			{{ content }}
-			
-			<h2 style="clear: both">Proudly Hosted by Silex Labs</h2>			
-			<p>
-				<a href="http://silexlabs.org/">Silex Labs</a>, non profit organization, is proud to be in charge of federating the Haxe community for this major event.
-			</p>
-			
-			{% if page.year %}
-			<h2>Sponsors</h2>
-			
-			<div class="center">
-				<img src="{{ site.baseurl }}/images/{{ page.year }}/sponsors.png" />
-			</div>
-			{% endif %}
 		</div>
 		
 		<footer>

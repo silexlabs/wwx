@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+<p>
+	by
+	{% for author in page.authors %}
+	&nbsp;<a href="{{ site.baseurl }}/speakers/{{ author | slugify }}/">{{ author }}</a>
+	{% endfor %}
+</p>
+
+{{ content }}
+
+{% if page.slide %}
+<p>
+	Here are the <a href="{{ page.slides }}">slides</a> of this presentation.
+</p>
+{% endif %}
+
+{% if page.video %}
+video
+{% endif %}

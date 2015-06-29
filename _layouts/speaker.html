@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<img style="float: right; margin-right: 25px;" src="{{ site.baseurl }}/images/speakers/{{ page.speaker | slugify }}-small.jpg" />
+
 <h2>{{ page.speaker }}</h2>
 
 <h3>Bio</h3>
@@ -9,16 +11,11 @@ layout: default
 	{{ content }}
 </p>
 
-{% capture tag %}{{ page.speaker | downcase | replace:' ','-' }}{% endcapture %}
-
 <h3>Talks</h3>
 <ul>
 	{% for p in site.pages %}
-		{% if p.categories | size > 0 %}
-			{% capture t %}{{ p.categories | first }}{% endcapture %}
-			{% if t == tag %}
-				<li>WWX{{ p.year }}: <a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
-			{% endif %}
+		{% if p.authors contains page.speaker %}
+			<li>WWX{{ p.year }}: <a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">{{ p.title }}</a></li>
 		{% endif %}
 	{% endfor %}
 </ul>

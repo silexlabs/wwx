@@ -10,14 +10,22 @@ layout: default
 	{% endfor %}
 </p>
 
-{{ content }}
+<br />
+
+<p>
+	{{ content }}
+</p>
 
 {% if page.slide %}
+<br />
+
 <p>
 	Here are the <a href="{{ page.slides }}">slides</a> of this presentation.
 </p>
 {% endif %}
 
 {% if page.video %}
+<br />
+
 video
 {% endif %}

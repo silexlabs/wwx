@@ -127,7 +127,7 @@ h3
     padding-top: 0.5em;
 }
 
-header a, h3 a
+header a, .aside h3 a
 {
 	color: white;
 }

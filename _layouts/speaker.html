@@ -2,15 +2,16 @@
 layout: default
 ---
 
-<img style="float: right; margin-right: 25px;" src="{{ site.baseurl }}/images/speakers/{{ page.speaker | slugify }}-small.jpg" />
+<img style="float: right; margin: 0 25px;" src="{{ site.baseurl }}/images/speakers/{{ page.speaker | slugify }}-small.jpg" />
 
 <h2>{{ page.speaker }}</h2>
 
-<h3>Bio</h3>
+<h3>{{ page.title }}</h3>
 <p>
 	{{ content }}
 </p>
 
+<br />
 <h3>Talks</h3>
 <ul>
 	{% for p in site.pages %}

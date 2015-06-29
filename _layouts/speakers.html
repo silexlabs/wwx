@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+{% for p in site.pages %}
+	{% if p.year == page.year %}
+		{% if p.layout == "talk" %}
+			{% capture l %}{{ p.url }}{% endcapture %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+{% for p in site.pages %}
+	{% if p.year == page.year %}
+		{% if p.layout == "talk" %}
+			<h2>{{ p.title }}</h2>
+			<p>
+				{{ p.content }}
+			</p>
+			<p>
+				{% for p2 in site.pages %}
+					{% if p2.layout == "speaker" %}
+						{% if p.authors contains p2.speaker %}
+							<img style="float: left;" src="{{ site.baseurl }}/images/speakers/{{ p2.speaker | slugify }}-small.jpg" />
+				
+							<h3>{{ p2.speaker }} {{ p2.title }}</h3>
+							<p>
+								{{ p2.content }}
+							</p>
+				
+							{% if p.url == l %}
+								<br style="clear: both;" />
+							{% endif %}
+							{% if p.url != l %}
+								<hr style="clear: both;" />
+							{% endif %}
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		{% endif %}
+	{% endif %}
+{% endfor %}

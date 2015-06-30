@@ -222,3 +222,30 @@ header a, .aside h3 a
 	position: absolute;
 	top: 25px;
 }
+
+.mediumspeaker
+{
+	float: left;
+	padding: 12px 20px 0px 25px;
+}
+
+hr
+{
+	clear: both;
+	margin: 0.7em 25px 0px;
+}
+
+.black
+{
+	color: black;
+}
+
+.blue
+{
+	color: #06abe3;
+}
+
+.black, .blue
+{
+	font-weight: bold;
+}

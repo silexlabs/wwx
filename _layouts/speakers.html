@@ -1,5 +1,6 @@
 ---
 layout: default
+subtitle: Speakers
 ---
 
 {% for p in site.pages %}
@@ -13,31 +14,31 @@ layout: default
 {% for p in site.pages %}
 	{% if p.year == page.year %}
 		{% if p.layout == "talk" %}
-			<h2>{{ p.title }}</h2>
+			<h2><a href="{{ p.url | replace:'index.html','' }}">{{ p.title }}</a></h2>
 			<p>
 				{{ p.content }}
 			</p>
-			<p>
-				{% for p2 in site.pages %}
-					{% if p2.layout == "speaker" %}
-						{% if p.authors contains p2.speaker %}
-							<img style="float: left;" src="{{ site.baseurl }}/images/speakers/{{ p2.speaker | slugify }}-small.jpg" />
-				
-							<h3>{{ p2.speaker }} {{ p2.title }}</h3>
-							<p>
-								{{ p2.content }}
-							</p>
-				
-							{% if p.url == l %}
-								<br style="clear: both;" />
-							{% endif %}
-							{% if p.url != l %}
-								<hr style="clear: both;" />
-							{% endif %}
-						{% endif %}
+			{% for p2 in site.pages %}
+				{% if p2.layout == "speaker" %}
+					{% if p.authors contains p2.speaker %}
+						<br />
+						<img class="mediumspeaker" src="{{ site.baseurl }}/images/speakers/{{ p2.speaker | slugify }}-small.jpg" />
+			
+						<h3><a href="{{ site.baseurl }}/speakers/{{ p2.speaker | slugify }}/">{{ p2.speaker }}</a> {{ p2.title }}</h3>
+						<p>
+							{{ p2.content }}
+						</p>
+			
 					{% endif %}
-				{% endfor %}
-			</p>
+				{% endif %}
+			{% endfor %}
+			
+			{% if p.url == l %}
+				<br style="clear: both;" />
+			{% endif %}
+			{% if p.url != l %}
+				<hr />
+			{% endif %}
 		{% endif %}
 	{% endif %}
 {% endfor %}

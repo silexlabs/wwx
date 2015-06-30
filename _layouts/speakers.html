@@ -14,7 +14,7 @@ subtitle: Speakers
 {% for p in site.pages %}
 	{% if p.year == page.year %}
 		{% if p.layout == "talk" %}
-			<h2><a href="{{ p.url | replace:'index.html','' }}">{{ p.title }}</a></h2>
+			<h2><a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">{{ p.title }}</a></h2>
 			<p>
 				{{ p.content }}
 			</p>

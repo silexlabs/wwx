@@ -16,16 +16,16 @@ layout: default
 	{{ content }}
 </p>
 
-{% if page.slide %}
+{% if page.slide-url != "" %}
 <br />
 
 <p>
-	Here are the <a href="{{ page.slides }}">slides</a> of this presentation.
+	Here are the <a href="{{ site.baseurl }}{{ page.url | replace:'index.html','' }}{{ page.slide-url }}">slides</a> of this presentation.
 </p>
 {% endif %}
 
-{% if page.video %}
+{% if page.video-url != "" %}
 <br />
 
-video
+video-url
 {% endif %}

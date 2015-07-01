@@ -24,8 +24,14 @@ layout: default
 </p>
 {% endif %}
 
-{% if page.video-url != "" %}
-<br />
+{% capture videosize %}{{ page.video-url | size }}{% endcapture %}
+{% if videosize != "0" %}
+	<br />
 
-video-url
+	{% for url in page.video-url %}
+		<div class="video">
+			<iframe width="100%" height="394" src="http://www.youtube.com/embed/{{ url }}" frameborder="0" allowfullscreen="">
+			</iframe>
+		</div>
+	{% endfor %}
 {% endif %}

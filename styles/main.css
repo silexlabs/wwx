@@ -249,3 +249,8 @@ hr
 {
 	font-weight: bold;
 }
+
+.box h2:first-child
+{
+	padding-top: 0;
+}

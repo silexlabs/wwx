@@ -34,7 +34,7 @@ layout: default
 						<p>
 							{{ p.title }}
 							<br />
-							<a href="{{ p.url | replace:'index.html','' }}">more...</a>
+							<a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">more...</a>
 						</p>
 					</div>
 				{% endif %}

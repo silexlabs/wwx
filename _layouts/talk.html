@@ -20,7 +20,7 @@ layout: default
 <br />
 
 <p>
-	Here are the <a href="{{ site.baseurl }}{{ page.url | replace:'index.html','' }}{{ page.slide-url }}">slides</a> of this presentation.
+	Here are the <a href="{% if page.slide-other != true %}{{ site.baseurl }}{{ page.url | replace:'index.html','' }}{% endif %}{{ page.slide-url }}">slides</a> of this presentation.
 </p>
 {% endif %}
 

@@ -1,0 +1,284 @@
+body {
+	overflow : hidden;
+	overflow-y : auto;
+	background-color : #333;
+	padding : 0;
+	font-family : "Open Sans", "Arial";
+	font-size : 26px;
+	font-weight : normal;
+	color : #797979;
+}
+body.fullScreen {
+	overflow : hidden;
+	margin : 0px;
+}
+body.fullScreen .menu {
+	display : none;
+}
+body.fullScreen .slide {
+	margin : 0px auto;
+}
+body.shiro .slide {
+	background-image : url("../img/slide-bg-shiro.png");
+}
+body.eirb h1 .w0:first-letter {
+	color : #CC4444;
+}
+body.eirb h1 .w1:first-letter {
+	color : #44AA44;
+}
+body.eirb h1 .w2:first-letter {
+	color : #4444DD;
+}
+body.eirb .slide.title h1 .w0 {
+	-webkit-transform : rotate(5deg);
+}
+body.eirb .slide.title h1 .w1 {
+	-webkit-transform : rotate(-5deg);
+}
+body.eirb .slide.title h1 .w2 {
+	-webkit-transform : rotate(5deg);
+}
+a {
+	color : #515151;
+}
+p {
+	margin-left : 20px;
+}
+.menu {
+	position : absolute;
+	z-index : 2;
+	font-size : 10px;
+	margin-left : 30px;
+}
+.menu ol {
+	padding : 0px;
+}
+.menu a {
+	cursor : pointer;
+	color : #666;
+	text-decoration : none;
+}
+.menu a:hover {
+	color : #aaa;
+}
+.menu li {
+	margin : 0px;
+	padding : 0px;
+}
+.slide {
+	user-select : none;
+	-moz-user-select : none;
+	-webkit-user-select : none;
+	position : relative;
+	border-radius : 5px;
+	-moz-border-radius : 5px;
+	-webkit-border-radius : 5px;
+	background-color : #fff;
+	background : url("../img/slide-bg.png");
+	margin : 10px auto;
+	padding : 10px;
+	width : 780px;
+	height : 580px;
+}
+.slide img {
+	max-width : 780px;
+}
+.slide h1 .word {
+	display : inline-block;
+	zoom : 1;
+	*display : inline;
+}
+.slide table {
+	margin : 5px auto;
+	border : 1px solid black;
+	border-collapse : collapse;
+}
+.slide table tr {
+	border-bottom : 1px solid #AAA;
+}
+.slide table th, .slide table td {
+	padding : 3px 10px;
+	border-left : 1px solid #DDD;
+}
+.slide table th {
+	text-align : center;
+	background-color : #333;
+	color : white;
+	border-left : 1px solid black;
+}
+.slide.bg {
+	background : transparent !important;
+	padding : 0px;
+}
+.slide.bg img {
+	position : absolute;
+	border-radius : 5px;
+	-moz-border-radius : 5px;
+	-webkit-border-radius : 5px;
+}
+.slide.bg h1 {
+	display : none;
+}
+.slide>img, .slide>a>img {
+	display : block;
+	margin : auto;
+}
+.slide.title h1 {
+	margin-top : 200px;
+	margin-bottom : 0px;
+	font-size : 80px;
+}
+.slide.title h1.sub {
+	margin-top : 10px;
+	font-size : 40px;
+}
+.slide.title p {
+	text-align : right;
+	position : absolute;
+	right : 20px;
+	bottom : 50px;
+}
+.slide-container {
+	width : 100%;
+	position : absolute;
+}
+li {
+	margin-bottom : 20px;
+}
+ul ul {
+	font-size : 80%;
+}
+ul ul li {
+	margin-bottom : 5px;
+}
+h1 {
+	margin-top : 0px;
+	text-align : center;
+	color : #515151;
+	font-size : 45px;
+	font-weight : bold;
+}
+h2 {
+	text-align : center;
+}
+pre, div.pre {
+	font-family : "Source Code Pro", "Courier New";
+	font-size : 20px;
+	color : #333;
+	background-color : #f3f3f3;
+	border : 1px solid #bbb;
+	margin : 15px;
+	padding : 5px;
+	border-left : 20px solid #bbb;
+}
+pre .val, div.pre .val {
+	color : #448 !important;
+}
+pre .str, pre .str .kwd, pre .str .val, div.pre .str, div.pre .str .kwd, div.pre .str .val {
+	color : #800 !important;
+}
+pre .cmt, pre .cmt .kwd, pre .cmt .val, div.pre .cmt, div.pre .cmt .kwd, div.pre .cmt .val {
+	color : #080 !important;
+}
+pre .cond, pre .cond .kwd, pre .cond .val, div.pre .cond, div.pre .cond .kwd, div.pre .cond .val {
+	font-weight : bold;
+	color : #080 !important;
+}
+pre .kwd, div.pre .kwd {
+	color : #008 !important;
+}
+body.black .slide {
+	border : 1px solid #f48821;
+	border-radius : 0px;
+	-moz-border-radius : 0px;
+	-webkit-border-radius : 0px;
+	background : rgb(20,20,25);
+	color : white;
+}
+body.black .slide ul li {
+	list-style : url("../img/hxico.png");
+	padding-left : 5px;
+}
+body.black .slide ul li ul li {
+	list-style : disc;
+}
+body.black .slide ul li ul li li {
+	list-style : circle;
+}
+body.black h1 {
+	color : white;
+}
+body.black h1 .w1, body.black h1 .w3, body.black h1 .w5 {
+	color : #f48821;
+}
+body.black.v2 .slide {
+	color : #f0f0f0;
+	border : none;
+	background-color : rgb(16,16,20);
+	background-image : url("../img/haxeslide.png");
+	background-repeat : no-repeat;
+}
+body.black.v2 .slide ul {
+	font-size : 40px;
+	padding-left : 0px;
+}
+body.black.v2 .slide ul li {
+	text-align : center;
+	list-style : none;
+	padding-left : 0px;
+}
+body.black.v2 .slide ul li span {
+	color : #f48821;
+}
+body.black.v2 .slide ul li code {
+	color : #B3A9A9;
+}
+body.black.v2 .slide ul li code a {
+	background-color : #444;
+	color : #eee;
+	padding : 1px 2px;
+}
+body.black.v2 .slide ul li pre {
+	text-align : left;
+}
+body.black.v2 .slide ul li.list, body.black.v2 .slide ul p.list {
+	font-size : 30px;
+	font-style : italic;
+}
+body.black.v2 .slide ul.packed li {
+	margin-bottom : 5px;
+}
+body.black.v2 .slide li.unlight {
+	opacity : 0.5;
+	filter : alpha(opacity=50);
+	zoom : 1;
+}
+body.black.v2 .slide h1 {
+	color : #101019;
+	background-color : #FFFFFF;
+	background-color : rgba(255,255,255,0.9);
+	background-color : transparent\9;
+	filter : progid:DXImageTransform.Microsoft.gradient(startColorstr=#E5FFFFFF, endColorstr=#E5FFFFFF);
+	zoom : 1;
+	letter-spacing : 1px;
+}
+body.black.v2 .slide.title {
+	background-image : url("../img/haxetitle.png");
+}
+body.black.v2 .slide.title h1 {
+	background : none;
+	color : #e3e3e3;
+	font-family : "Impact";
+	font-weight : normal;
+	font-size : 180px;
+	letter-spacing : 10px;
+	padding-right : 20px;
+}
+body.black.v2 .slide.title h1 span {
+	color : #f48821;
+}
+body.black.v2 .slide.title p {
+	bottom : 20px;
+	color : #141419;
+}

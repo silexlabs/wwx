@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Tink</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+        <section>
+          <section>
+            <h1>Tinkerbell</h1>
+            <h3>Haxe on Wings</h3>
+            <img src="img/dark_tink.png" height="250px">
+          </section>
+
+          <section>
+            <h3>But first</h3>
+            <h2>A few thoughts on programming</h2>
+          </section>
+
+          <section>
+            <h1>Warning</h1>
+            <p class="fragment">Don't believe me.</p>
+            <p class="fragment">Not even when I'm (mis)quoting clever people.</p>
+            <p class="fragment">Don't believe them either.</p>
+            <p class="fragment">Try things for yourself.</p>
+            <p class="fragment">Particularly those that seem revolting at first.</p>
+          </section>
+          
+        </section>
+
+        <section>
+          
+          <section>
+            <h1>We suck at this</h1>
+
+            <h3 class="fragment">Don't think so?</h3>
+            <p class="fragment">Would you seriously trust a bridge, let alone an airplane, built the way we build software?</p>
+            
+            <h3 class="fragment">We are <em>not</em> engineers!</h3>
+            <p class="fragment">That's a worthy goal, but it is far ahead.</p>
+            <p class="fragment">There are no shortcuts.</p>
+            <p class="fragment">Engineering comes from <em>ingenuity</em>.</p>
+
+          </section>
+
+          <section>
+            <h1>Keep the fun</h1>
+            <blockquote>I think that it's extraordinarily important that we in computer science keep fun in computing. [...] We began to feel as if we really were responsible for the successful, error-free perfect use of these machines. I don't think we are. I think we're responsible for stretching them, setting them off in new directions, and keeping fun in the house. [...]
+
+            <footer><a target="_blank" href="https://www.youtube.com/watch?v=2Op3QLzMgSY&list=PLE18841CABEA24090">Structure and Interpretation of Computer Programs</a></footer>
+            </blockquote>
+            
+          </section>
+
+          <section>
+            
+            <h1>Methodologies</h1>
+
+            <h3 class="fragment">They are orthogonal to Programming</h3>
+            <p class="fragment">The ones that are about programming often cause more problems than they solve.</p>
+            <p class="fragment">The ones that add value are about <em>communication</em>.</p>
+
+          </section>
+
+        </section>
+
+        <section>
+          
+          <section>
+            <h1>Embrace Nothingness</h1>
+
+            <p class="fragment list-title">List of all proven methods to avoid bugs in code:</p>
+            
+            <ol>
+              <li class="fragment">Don't write code.</li>
+              <li class="fragment">End of list ...</li>
+            </ol>
+
+            <h3 class="fragment">Do not ruin the empty slate<span class="fragment">!</span><span class="fragment">!!</span><span class="fragment">1</span><span class="fragment">!1!</span></h3>
+
+            <p class="fragment">The codebase becomes a terrible mess all by itself.</p>
+            <p class="fragment">No need to accelarate the process.</p>
+            <p class="fragment">Leave yourself the room to maneuvre.</p>
+          </section>
+
+          <section>
+            <h1>Trust your fellow programmers</h1>
+
+            <ul>
+              <li class="fragment">Trust in their willingness to learn and grow.</li>
+              <li class="fragment">Trust in their ability to complement the code you write. <span class="fragment small">(Even if you are 100% positive they are heretically superstitious, that doesn't mean they are incapable)</span></li>
+              <li class="fragment">Don't impose decisions on them.</li>
+              <li class="fragment">Don't consider yourself smarter. <span class="fragment">It gives you the wrong perspective.</span></li>
+              <li class="fragment">Never be afraid to ask.</li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h1>YAGNI / KISS</h1>
+            <blockquote>
+              It seems that perfection is attained not when there is nothing more to add, but when there is nothing more to remove.
+              <footer>Antoine de Saint Exupéry</footer>
+            </blockquote>
+
+          </section>
+
+          <section>
+            <h1>YAGNI</h1>
+            
+            <ul>
+              <li class="fragment">Implementing things that may be useful later is a form of premature optimization.</li>
+              <li class="fragment">Adding what you need to a lean system is easier than bending a huge system that does almost but not quite what you need to do when you actually need.</li>
+              <li class="fragment">Be aware of adding implicit assumptions to your design. Example: HTTP</li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h1>NOT KISS</h1>
+            <p>Problem: You need to cut and pinch</p>
+            <div class="fragment">
+              <img class="decorated" src="img/swiss-knife.jpg" height="400px">
+            </div>
+          </section>
+
+          <section>
+            <h1>KISS</h1>
+            <p>Problem: You need to cut and pinch</p>
+            <div class="fragment">
+              <img class="decorated" src="img/knife.jpg" height="250px">
+              <img class="decorated" src="img/pincers.jpg" height="250px">
+            </div>
+          </section>
+
+          <section>
+            <h1>Simplicity</h1>
+            <ul>
+              <li class="fragment">Easy and simple are two different things. Simplicity is hard to achieve and simple things are not necessarily easy to use. Just easy to to reason about.</li>
+              <li class="fragment">When in doubt, keep things small.</li>
+              <li class="fragment">Oversimplification is to simplicity what perfectionism is to perfection.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>In a nutshell</h1>
+              <blockquote>There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult.
+              <footer>C. A. R. Hoare</footer>
+            </blockquote>            
+          </section>
+
+          <section>
+            <h1>Divide and Conquer</h1>
+
+            <p class="fragment">There is evidence to suggest it works.</p>
+
+            <h3 class="fragment">Also known as:</h3>
+            <ul>
+              <li class="fragment">Seperation of Concerns</li>
+              <li class="fragment">Single Responsibility Principle</li>              
+            </ul>
+            <blockquote class="fragment">The single responsibility principle states that every class should have a single responsibility, and that responsibility should be <em>entirely encapsulated</em> by the class.
+            <footer>Wikipedia</footer></blockquote>
+
+          </section>            
+          
+          <section>
+            <h1>A beginner's mind</h1>
+            <blockquote>In the beginner's mind there are many possibilities, in the expert's mind there are few.
+              <footer>Shunryu Suzuki</footer>
+            </blockquote>
+          </section>
+
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Looking at Haxe</h1>
+            <p class="fragment">Does Haxe deliver on the promise Java failed to keep?</p>
+            <p class="fragment small">(That's a serious question, but for now let's go with:)</p>
+            <p class="fragment">Of course it does!!!</p>
+            <h2 class="fragment">Why?</h2>
+            <div class="fragment">
+              <a target="_blank" href="http://www.ohloh.net/p/6844/widgets/project_basic_stats.html"><img class="decorated" src="img/haxe_stats.png"></a>
+              <a target="_blank" href="http://www.ohloh.net/p/5207/widgets/project_basic_stats.html"><img class="decorated" src="img/openjdk_stats.png"></a>            
+            </div>
+          </section>
+
+          <section>
+            <h2>No short lambdas</h2>
+            <p class="fragment">What's not in Haxe is as important as what is.</p>
+            <h3 class="fragment">Also:</h3>
+            <img class="fragment" src="img/macros.jpg">
+          </section>
+
+        </section>
+
+        <section>
+          
+
+          <section>
+            <h1>Bending Haxe</h1>
+            <img class="fragment" src="img/spoon.jpg">
+          </section>
+          
+
+          <section>
+            <h1>To what end?</h1>
+            <img class="fragment" src="img/bullets.jpg">
+          </section>
+
+
+          <!-- <section>
+            <h1>Let's go, right?</h1>
+            <img src="img/red-pill.png">
+          </section> -->
+
+        </section>
+
+        <section data-state="tink-evolution">
+          <section data-transition="fade">
+            <img src="img/plain_haxe.png">
+          </section>
+          <section data-transition="fade">
+            <img src="img/wings_orange.png">
+          </section>
+          <section data-transition="fade">
+            <img src="img/wings_white.png">
+          </section>
+          <section data-transition="fade">
+            <img src="img/tink.png">
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h1>What it's not</h1>
+            <h3 class="fragment">And never going to be</h3>
+            <ul>
+              <li class="fragment">One framework</li>
+              <li class="fragment">Finished</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>What it is</h1>
+            <p class="fragment">A continuous work in progess.</p>
+            <p class="fragment">Many small, well documented packages.</p>
+            <p class="fragment">See <a target="_blank" href="http://github.com/haxe_tink/">github.com/haxe_tink/</a></p>
+            <ul class="fragment">
+              <li>tink_core <span class="small">(hx: 529, md: 587 (67%))</span></li>
+              <li>tink_macro <span class="small">(hx: 1310, md: 303 (36%))</span></li>
+              <li>tink_lang <span class="small">(hx: 1934, md: 776 (38%))</span></li>
+              <li>tink_priority <span class="small">(hx: 103, md: 110 (61%))</span></li>
+              <li>tinx_autospod <span class="small">(hx: 146, md: 15 (30%))</span></li>
+              <li>tink_template <span class="small">(hx: 809, md: 213 (31%) )</span></li>
+              <li>More to come ...</li>
+            <ul>
+
+          </section>
+        </section>
+        
+
+        <section>
+          <section>
+            <h1>Tinkerbell Core</h1>
+            <ul>
+              <li>Error handling</li>
+              <li>Asynchrony</li>
+              <li>Lazyness</li>
+              <li>Signals</li>
+              <li>And more ...</li>
+            </ul>            
+          </section>
+          <section>
+            <h2>Philosophy</h2>
+
+            <p class="fragment">Composability!!! Composability!!! Composability!!!</p>
+
+            <p class="fragment">See also <a target="_blank" href="https://groups.google.com/d/msg/haxelang/-VJUHqCtHTQ/wwCqxusv1iUJ">promhx</a> and <a target="_blank" href="https://github.com/massiveinteractive/msignal">msignal.</a></p>
+
+            <p class="fragment">Example: <code>tink.core.Signal</code> has a <code>map</code> and a <code>filter</code> method. <span class="fragment">Let's make it pausable!</span></p>
+            <pre class="fragment"><code>function pausable&lt;T&gt;(s:Signal&lt;T&gt;) {
+  var paused = false;
+  return {
+    signal: s.filter(function (_) return !paused),
+    isPaused: function () return paused,
+    setPaused: function (param) paused = param,
+  }
+}</code></pre>
+          </section>
+          <section>
+            <h2>More composing</h2>
+            <pre><code>typedef Button {
+  var clicked(default, null):Signal&lt;MouseEvent&gt;
+}
+
+var up:Button = ...,
+    down:Button = ...;
+
+var delta = up.clicked.map(function (_) return -1).join(
+  down.clicked.map(function (_) return 1)
+);
+
+$type(delta);//Signal&lt;Int&gt;</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Tinkerbell Language Extensions</h1>
+
+            <ul>
+              <li>Trailing argument</li>
+          	  <li>Short Lambdas</li>
+          	  <li>Extended and optimized loops</li>
+          	  <li>Partial implementation (much like traits)</li>
+              <li>Syntactic forwarding</li>
+          	  <li>Function options</li>
+              <li>And more...</li>
+            </ul>
+          </section>
+
+
+
+
+          <section>
+            <h3>Usage</h3>
+
+            <p>Use in any class with <code>implements tink.Lang</code>.</p>
+
+            <p>Extended syntax is applied to the class and all subclasses.</p>
+
+            <pre><code>class Point implements tink.Lang {
+  public var x = (.0);
+  public var y = (.0);
+  @:calculated var length = Math.sqrt(x * x + y * y);
+}</code></pre>
+          </section>
+
+
+
+          <section>
+            <h3>Trailing arguments</h3>
+            <p>Do you hate it to have an expression end with <code>})]})</code>?</p>
+            <pre><code>Mysql.connect() => {
+  database : 'test',
+  user : 'user',
+  password : 'password',
+}</code></pre>
+          </section>
+
+
+
+          <section>
+            <h3>Short Lambdas</h3>
+
+            <pre><code>[] => 4;               
+[x] => 2 * x;          
+[x, y] => x + y;       
+x => 2 * x;            
+
+@do body;              
+@do(x, y) trace(x + y);
+
+@f value;              
+@f(x, y) (x + y);</code></pre>
+            <pre><code>function () return 4;
+function (x) return 2 * x;
+function (x, y) return x + y;
+function (x) return 2 * x;
+
+function () body;
+function (x, y) trace(x + y);
+
+function () return value;
+function (x, y) return x + y;</code></pre>
+
+          </section>
+
+
+
+          <section>
+            <h3>And more Short Lambdas</h3>
+
+            <pre><code>switch _ {}     
+switch [_, _] {}
+
+@do switch _ {} 
+@f switch _ {}</code></pre>
+
+            <pre><code>function (x) return switch x {}
+function (x, y) return switch [x, y] {}
+
+function (x) switch x {}
+function (x) return switch x {}</code></pre>            
+          </section>
+
+
+
+          <section>
+            <h3>Nice example</h3>
+
+            <pre><code>myButton.clicked.handle() => @do {
+  trace('clicked!!!');
+}
+
+http.load(someUrl).handle() => @do switch _ {
+  case Success(data): trace('loaded $data');
+  case Failure(error): trace('ERROR: $error!');
+}</code></pre>
+          </section>
+
+          <section>
+            <h3>Extended loops</h3>
+
+            <pre><code>for (i += .5 in 0...100) {}
+for (i -= .5 in 100...0) {}
+
+for ([b in bananas, m in monkeys]) m.eat(b);
+for ([b in bananas, m in monkeys || monkey[0]]) m.eat(b);
+
+for (key => value in map) {}
+
+for ([m in monkeys, i++]) {}</code></pre>
+          </section>
+
+
+
+          <section>
+            <h3>Optimized loops</h3>
+            <pre><code>@:tink_for({ 
+  var i = 0, a, l;
+  {
+    a = untyped __call__('array_values', @:privateAccess this.h);
+    l = untyped __call__('count', a);               
+  }
+}, i &lt; l, a[i++])
+function iterator():Iterator&lt;T&gt;;</code></pre>
+            <ul>
+              <li>Usually a speed up of factor 1.5 to 4 for loops</li>
+              <li>Factor 40 for lists on flash and 30 for string map keys on java</li>
+            </ul>
+          </section>  
+
+
+
+          <section>
+            <h3>Partial implementation</h3>
+            <p>Interfaces can have implementation</p>
+            <pre><code>interface Enumerable&lt;T&gt; implements tink.Lang {
+    @:calc var length = fold(0, function (count, _) return count + 1);
+
+    function fold&lt;A&gt;(init:A, calc:A-&gt;T-&gt;A):A {
+        forEach(function (v) init = calc(init, v));
+        return init;
+    }
+    function forEach(f:T-&gt;Void):Void 
+        for (v in this) f(v);
+
+    function map&lt;A&gt;(f:T-&gt;A):Array&lt;A&gt; {
+        var ret = [];
+        forEach(ret.push);
+        return ret;
+    }
+}</code></pre>
+          </section>
+          
+
+          <section>
+            <h3>Partial implementation</h3>
+            <p>Partial implementation can have dependencies</p>
+            <pre><code>interface Enumerable&lt;T&gt; implements tink.Lang {
+  /* ... */
+  @:usedOnlyBy(iterator) 
+  var elements:Array&lt;T&gt; = [];
+  @:usedOnlyBy(forEach)
+  public function iterator():Iterator&lt;T&gt; {
+      return elements.iterator();
+  }  
+}</code></pre>
+          </section>
+
+          <section>
+            <h3>Syntactic forwarding</h3>
+            <pre><code>class Stack<T> implements tink.Lang {
+  @:forward(push, pop, iterator, length) var elements:Array<T>;
+  public function new() {
+    this.elements = [];
+  }
+}</code></pre>
+          </section>
+
+
+
+          <section>
+            <h3>Function options</h3>
+            <pre><code>function connect&lt;T&gt;(                      
+  args = { 
+    host: 'localhost', 
+    port: 3306, 
+    'database': 'test', 
+    username: (_ : String), 
+    password: (_ : String) 
+  }
+) {
+  return Mysql.connect(args);
+}</code></pre>
+          </section>
+
+        </section>        
+
+        <section>
+          <section>
+            <h1>Tink Auto SPOD Extension</h1>
+            <div class="left">
+              <p class="fragment">Automatically connects. Creates missing tables and adds missing columns. Initializes SPOD.</p>
+
+              <p class="fragment">Usage: <code>-lib tinx_autospod tinx.AutoSpod.use()</code> (See <a target="_blank" href="https://github.com/HaxeFoundation/haxe/issues/3037">#3037</a>)</p>
+
+              <p class="fragment">Configuration through <code>dbconfig.uri</code> in working directory</p>
+              <pre class="fragment"><code>mysql://user:password@host:port/dbname
+
+sqlite:path/to/file.db
+
+alias:path/to/directory</code></pre>
+            </div>
+
+          </section>
+        </section>
+
+
+
+        <section>
+          <section>
+            <h1>Tink Template</h1>
+
+            <p class="fragment">Largely <code>haxe.Template</code> compatible compile time template language with rich syntax,
+            including <code>switch</code>, <code>while</code>, <code>for</code>, <code>var</code>, <code>function</code>.</p>
+            <p class="fragment">Templates become true Haxe classes on the fly, that can implement interfaces and extend classes.</p>
+            <p class="fragment">Usage: <code>-lib tinx_autospod tinx.AutoSpod.use()</code> 
+            <p class="fragment">No support for <code>import</code> and <code>using</code> (see <a target="_blank" href="https://github.com/HaxeFoundation/haxe/issues/2868">#2868</a>).</p>
+          </section>
+
+          <section>
+            <h3>Example</h3>
+            <pre><code style="font-size: 100%; line-height: 1.1em;">//Example.tpl
+::static inline var TITLE = 'Awesome blog'::
+
+::static function header(?title = TITLE)::
+  &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;::title&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+::end::
+
+::static function index(posts:Array&lt;Post&gt;)::
+  ::header()::
+    ::for p in posts:: ::excerpt(p):: ::end::
+  ::footer()::
+::end::
+
+::static function excerpt(p:Post)::
+  ::p.excerpt()::
+  &lt;a href="/post/::p.id::"&gt;Read more&lt;/a&gt;
+::end::
+
+::static function doDefault()
+  Sys.print(index(Post.manager.all()))
+::
+
+::static function main()
+  Dispatch.run(Web.getURI(), Web.getParams(), Example)
+::
+            </code></pre>
+          </section>          
+
+          <section>
+            <h2>Escaping</h2>
+            <h4 class="fragment">Just use the type system.</h4>
+            <pre class="fragment"><code>abstract Html {
+  public function new(s:String):Void;
+
+  @:from static public function escape(s:String):Html;
+  @:from static function ofMultiple(parts:Array&lt;Html&gt;):Html;
+  
+  @:from static public function of&lt;A&gt;(a:A):Html;
+}</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h1>The Future</h1>
+          <ul>
+            <li class="fragment">More tests</li>
+            <li class="fragment">More modules</li>
+            <li class="fragment">More users?</li>
+            <li class="fragment">More contributors??</li>
+          </ul>
+
+        </section>
+
+        <section data-state="tink-evolution">
+          <section>
+            <h1>Join Now!</h1>
+            <img src="img/tink_full.png">
+          </section>
+          <section>
+            <h1>Questions?</h1>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        progress: true,
+        history: true,
+        center: false,
+        controls: false,
+        transition: 'linear',
+      });
+    </script>
+  </body>
+</html>

@@ -3,12 +3,14 @@ layout: default
 ---
 
 <h2>{{ page.title }}</h2>
+{% if page.authors %}
 <p>
 	by
 	{% for author in page.authors %}
 	&nbsp;<a href="{{ site.baseurl }}/speakers/{{ author | slugify }}/">{{ author }}</a>
 	{% endfor %}
 </p>
+{% endif %}
 
 <br />
 

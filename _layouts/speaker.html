@@ -14,7 +14,8 @@ layout: default
 <br />
 <h3>Talks</h3>
 <ul>
-	{% for p in site.pages %}
+	{% assign sorted_pages = (site.pages | sort: 'year') %}
+	{% for p in sorted_pages %}
 		{% if p.authors contains page.speaker %}
 			<li>WWX{{ p.year }}: <a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">{{ p.title }}</a></li>
 		{% endif %}

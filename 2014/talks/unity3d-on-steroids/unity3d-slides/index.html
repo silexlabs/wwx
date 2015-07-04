@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Unity3D on steroids with Haxe</title>
+
+		<meta name="description" content="Getting started with Haxe and Unity3D">
+		<meta name="author" content="Cauê Waneck">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="revealjs/css/reveal.css">
+		<link rel="stylesheet" href="revealjs/css/theme/blood.css" id="theme">
+		<!-- <link rel="stylesheet" href="revealjs/css/theme/beige.css" id="theme"> -->
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'revealjs/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<style>
+.reveal pre.compare {
+	font-size: 0.45em;
+	padding: 0;
+	margin: 0;
+}
+.reveal pre.compare {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="extras/dukenukem.jpg">
+					<h1>Unity3D on steroids</h1>
+					<h3>Adding Unity to your supersonic Haxe toolbox</h3>
+					<p>
+						<small>Created by <a href="http://github.com/waneck">Cauê Waneck</a> / <a href="http://twitter.com/cwaneck">@cwaneck</a></small>
+					</p>
+				</section>
+
+				<section>
+				<h2>Why Unity3D?</h2>
+				<ul>
+					<li>Most popular tool for 3D games</li>
+					<li>Multiple targets: web-based using a plugin</li>
+					<li>Awesome editor</li>
+					<li>Flash "refugees"</li>
+					<li>Don't fight, assimilate</li>
+					<li>Asset store</li>
+					<li class="fragment"><span class="fragment">Because </span><h4 style="font-size: 1.5em;display: inline;" class="fragment">WE <span class="fragment">CAN</span></h4></li> 
+						<!-- you may need to use Unity in some project, and one of the biggest advantages of Haxe is being able to choose the best tool for the job -->
+				</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<section>
+					<h2>Why Haxe?</h2>
+					<ul>
+						<li class="fragment">Very little change in workflow</li>
+						<li class="fragment">Unity as a target: Natively target even more platforms</li>
+						<li class="fragment">Awesome open-source community</li> <!-- vs asset store -->
+						<li class="fragment">Future-proof code base</li>
+						<li class="fragment">Networking: Same code base</li>
+						<!-- <li class="fragment">Documentation?</li> -->
+						<div class="fragment">
+						<li>Elegant and feature-rich language</li>
+						<ul>
+							<li>Functional and imperative programming</li>
+							<li>Pattern matching, array comprehensions, ADTs and so much more</li>
+						</ul>
+						</div>
+						<li class="fragment">Did I mention... <span class="fragment">macros ?</span></li>
+					</ul>
+					</section>
+					<section>
+						<h2>Why Haxe? (tl;dr)</h2>
+						<img src="extras/use-haxe.jpg" width="319" height="315" alt="Use HAXE" />
+					</section>
+				</section>
+
+				<section>
+					<h2>Getting started with Unity/Haxe</h2>
+				</section>
+				<section>
+					<h3>How it was</h3>
+					<img src="extras/how-it-was.png" width="754" height="564" alt="How it was" />
+				</section>
+				<section>
+					<section>
+						<h3>Now</h3>
+						<div data-markdown class="fragment">
+						```bash
+						$ haxe -net-lib libs/UnityEngine.dll -net-lib libs/UnityEditor.dll
+
+						```
+					</div>
+					</section>
+					<section>
+						<h3>net-lib</h3>
+						<ul>
+							<li class="fragment">Haxe/C#'s counterpart of -java-lib and -swf-lib</li>
+							<li class="fragment">No need to create externs</li>
+							<li class="fragment">Do pratically anything you can do with pure C# code</li>
+							<li class="fragment">Properties, events, delegates, overloaded functions ...</li>
+						</ul>
+					</section>
+					<section data-markdown>
+						```haxe
+						@:meta(System.SomeAttribute(1,2,3))
+						class HaxeClass extends CsClass implements CsInterface
+						{
+							@:overload override function get_SomeProperty():Int
+							{
+								trace("I'm overriding a C# getter!");
+								return super.get_SomeProperty();
+							}
+
+							@:overload public function implementedInterfaceFunction(a:String):Void
+							{
+								some.native.Type.Type_InnerClass.doSomething(a);
+								callDelegate(function() trace(a));
+								this.add_someEvent(function() trace(a));
+							}
+
+							@:unsafe function unsafeCode()
+							{
+								var arr = new cs.NativeArray<Int>(10);
+								cs.Lib.fixed({
+									var p:Pointer<Int> = cs.Lib.pointerOfArray(x);
+									for (i in 0...10)
+									{
+										p[0] = i;
+										p = p.add(1);
+									}
+								});
+							}
+							
+							@:overload function callDelegate(act:cs.system.Action):Void
+							{
+								act.Invoke();
+							}
+
+							@:overload function callDelegate<T>(act.cs.system.Func<T>):Void
+							{
+								act.Invoke();
+							}
+						}
+						```
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						### Example
+						```bash
+						 -net-lib ../libs/UnityEngine.dll
+						 -net-lib ../libs/UnityEditor.dll
+						 #let the Unity IDE do the C# compilation
+						 -D no-compilation
+						 -cs haxe_bin
+						 ExampleScript
+						 ```
+						 ```haxe
+						 import cs.NativeArray;
+						 import unityengine.*;
+
+						 class ExampleScript extends unityengine.MonoBehaviour
+						 {
+								public var stringProp:String;
+								public var arrayProp:NativeArray&lt;Int&gt;;
+								public var vectorProp:Vector3;
+								@:protected var protectedVar:Int;
+
+								function Update()
+								{
+									Debug.Log("It's working!");
+								}
+						 }
+						 ```
+					</section>
+					<section data-markdown>
+						 [![screenshot](extras/how-to-1.png)](extras/how-to-1.png)
+					</section>
+				</section>
+				<section>
+					<section>
+					<h3>Generated code</h3>
+
+						<pre><code class="cs haxe hljs php">import cs.NativeArray;
+import unityengine.*;
+
+@:nativeGen class ExampleScript extends unityengine.MonoBehaviour
+{
+	public var stringProp:String;
+	public var arrayProp:NativeArray&lt;Int&gt;;
+	public var vectorProp:Vector3;
+	@:protected var protectedVar:Int;
+
+	function Update()
+	{
+		Debug.Log("It's working!");
+	}
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Generated code</h3>
+						<pre><code class="cs haxe hljs php">#pragma warning disable 109, 114, 219, 429, 168, 162
+public class ExampleScript : global::UnityEngine.MonoBehaviour {
+	public ExampleScript() : base() {
+	}
+
+	public string stringProp;
+	public int[] arrayProp;
+	public global::UnityEngine.Vector3 vectorProp;
+	protected int protectedVar;
+	public virtual void Update() {
+		global::UnityEngine.Debug.Log(((object) ("It\'s working!") ));
+	}
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h3>Error positions</h3>
+					<img src="extras/error-message.png" />
+				</section>
+				<section data-markdown>
+					### unity_std_target
+					```bash
+					$ haxe -cp haxe_src -cs generated -D "unity_std_target=Standard Assets"
+					```
+					* Compiler directive added very recently
+					* Generates the files relative to their sources
+				</section>
+				<section>
+					<section data-markdown>
+						### Equivalence
+						#### Types
+
+						|  C#           |  Haxe
+						|---------------|-----------------------------
+						| SomeType[]    | `NativeArray&lt;SomeType&gt;` 
+						| UnityEngine.SomeType | unityengine.SomeType
+						| using UnityEngine | import unityengine.*
+					</section>
+					<section>
+						<h3>Equivalence</h3>
+						<h4>Code</h4>
+						<pre class="compare"><code class="cs haxe hljs php">
+							//C#
+							EditorApplication.update += delegate() { Debug.Log("update"); };
+							void Update() {}
+							SomeComponent comp = GetComponent&lt;SomeComponent&gt;();
+							[UnityEngine.InitializeOnLoad] public class Something ...
+
+							//Haxe
+							EditorApplication.update += function() Debug.Log('update');
+							function Update() {}
+							var comp:SomeComponent = GetComponent(); //or var comp = (GetComponent() : SomeComponent)
+							@:meta(UnityEngine.InitializeOnLoad) class Something ...
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>Steroids</h2>
+					<img src="extras/steroids.jpg" />
+				</section>
+				<section>
+					<h3>WIP: unihx</h3>
+						<!-- please consider this a WIP and more like a collection of ideas for now. Also, needs latest haxe -->
+						<div class="fragment">Goal: Unity powered by Haxe</div>
+						<a class="fragment" href="https://github.com/waneck/unihx">https://github.com/waneck/unihx</a>
+						<pre class="fragment"><code class="bash hljs php">
+							$ haxelib run unihx init path/to/dir
+						</code></pre>
+						<div class="fragment">
+						Danger: Proof-of-concept. User discretion is advised
+						</div>
+				</section>
+				<section>
+					<h3>unihx features</h3>
+					<ul>
+						<li class="fragment">Automatic recompilation (using compilation server)</li>
+						<li class="fragment">Generate files in the folder relative to where they are</li>
+						<li class="fragment">Drag &amp; Drop support for Haxe classes</li>
+						<li class="fragment">Avoid the generated C# code warnings</li>
+						<li class="fragment">Mix pure C# code with Haxe and cross-reference between them</li>
+						<li class="fragment">Add Vector / Quaternion operator overloading</li>
+					</ul>
+				</section>
+				<section>
+					<h3>unihx features</h3>
+					<h4>Haxe API overrides</h4>
+					<ul>
+						<li class="fragment">trace() -&gt; Debug.Log</li>
+						<li class="fragment">haxe.Timer</li>
+						<li class="fragment">haxe.Http -&gt; UnityEngine.WWW (planned)</li>
+					</ul>
+				</section>
+				<section>
+					<h2 style="display:none">HaxeBehaviour</h2>
+					<img src="extras/haxebehaviour.jpg" alt="HaxeBehaviour" />
+					<ul>
+						<li>Supports non-constant expressions on the initializer</li>
+						<li>Automatically sets @:nativeGen</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h3>HaxeBehaviour macros</h3>
+						<p>1. Comments show up in inspector</p>
+						<img src="extras/tooltip.png" />
+					</section>
+
+					<section>
+						<p>2. Extra properties through comment tags</p>
+						<img src="extras/custom-props.png" />
+					</section>
+
+					<section>
+						<p>3. Custom controls</p>
+						<img src="extras/custom-controls-1.png" />
+					</section>
+
+					<section>
+						<p>4. Editor-time control events</p>
+						<img src="extras/custom-controls-2.png" />
+					</section>
+
+					<section>
+						<p>5. Haxe types support</p>
+						<img src="extras/enums-1.png" style="float:left" />
+						<img src="extras/enums-2.png" />
+						<img src="extras/enums-3.png" />
+						<img src="extras/enums-4.png" />
+					</section>
+				</section>
+
+				<!-- <section> -->
+				<!-- 	<h2>Excess</h2> -->
+				<!-- </section> -->
+
+				<section data-markdown>
+					## C# target roadmap
+					* Fix still open generator/-net-lib bugs
+					* Implement missing C# interoperability functionality: Whatever is possible in C#, it should be possible in Haxe
+					* Direct assembly from Haxe: Skip the intermediate C# representation
+				</section>
+
+				<section>
+					<h2>Call for collaboration!</h2>
+				</section>
+
+				<section>
+					<img src="extras/questions.png" />
+					<h2>Questions?</h1>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<h3>BY @cwaneck</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="revealjs/lib/js/head.min.js"></script>
+		<script src="revealjs/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'zoom', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				parallaxBackgroundImage: 'extras/pano2.jpg',
+				parallaxBackgroundSize: '4784px 720px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

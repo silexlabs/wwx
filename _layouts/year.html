@@ -22,12 +22,7 @@ layout: default
 
 						<h3>
 						{% for a in p.authors %}
-							<a href="{{ site.baseurl }}/speakers/{{ a | slugify }}">{{ a }}</a>
-							{% if s != "1" %}
-								{% if a != sl %}
-									and
-								{% endif %}
-							{% endif %}
+							<a href="{{ site.baseurl }}/speakers/{{ a | slugify }}">{{ a }}</a>{% if s != "1" %}{% if a != sl %}, {% endif %}{% endif %}
 						{% endfor %}
 						</h3>
 

@@ -21,7 +21,7 @@ subtitle: Speakers
 			{% for p2 in site.pages %}
 				{% if p2.layout == "speaker" %}
 					{% if p.authors contains p2.speaker %}
-						<br />
+						<br style="clear: both;" />
 						<img class="mediumspeaker" src="{{ site.baseurl }}/images/speakers/{{ p2.speaker | slugify }}-small.jpg" />
 			
 						<h3><a href="{{ site.baseurl }}/speakers/{{ p2.speaker | slugify }}/">{{ p2.speaker }}</a> {{ p2.title }}</h3>

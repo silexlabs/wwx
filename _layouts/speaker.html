@@ -14,12 +14,33 @@ layout: default
 <br />
 <h3>Talks</h3>
 <ul>
-	{% assign sorted_pages = (site.pages | sort: 'year') %}
+	{% assign sorted_pages = (site.pages | where:"layout","talk" %}
+	{% assign sorted_pages = (sorted_pages | sort: 'year') %}
 	{% for p in sorted_pages %}
 		{% if p.authors contains page.speaker %}
 			<li>WWX{{ p.year }}: <a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">{{ p.title }}</a></li>
 		{% endif %}
 	{% endfor %}
 </ul>
+
+{% assign workshops = (site.pages | where:"layout","workshop" %}
+{% assign workshops = (workshops | sort:"year" %}
+{% assign first_done = false %}
+
+{% for p in workshops %}
+	{% if p.authors contains page.speaker %}
+		{% if first_done == false %}
+			<br />
+			<h3>Workshops</h3>
+			<ul>
+			{% assign first_done = true %}
+		{% endif %}
+	
+		<li>WWX{{ p.year }}: <a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">{{ p.title }}</a></li>
+	{% endif %}
+{% endfor %}
+{% if first_done %}
+	</ul>
+{% endif %}
 
 <br style="clear: both" />

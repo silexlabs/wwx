@@ -18,7 +18,7 @@ layout: default
 	{{ content }}
 </p>
 
-{% if page.slide-url != "" %}
+{% if page.slide-url and page.slide-url != "" %}
 <br />
 
 <p>
@@ -26,8 +26,8 @@ layout: default
 </p>
 {% endif %}
 
-{% capture videosize %}{{ page.video-url | size }}{% endcapture %}
-{% if videosize != "0" %}
+{% assign videosize = (page.video-url | size) %}
+{% if videosize > 0 %}
 	<br />
 
 	{% for url in page.video-url %}

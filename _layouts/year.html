@@ -9,31 +9,60 @@ layout: default
 	<div class="box70">
 		<a name="speakers"></a>
 		<h2>Speakers</h2>
-		{% for p in site.pages %}
-			{% if p.year == page.year %}
-				{% if p.layout == "talk" %}
-					<div class="speaker">
-						{% capture s %}{{ p.authors | size }}{% endcapture %}
-						{% capture sl %}{{ p.authors | last }}{% endcapture %}
+		{% assign talks = (site.pages | where:"layout","talk") %}
+		{% assign talks = (talks | where:"year",page.year) %}
+		{% for p in talks %}
+			<div class="speaker">
+				{% assign s = (p.authors | size) %}
+				{% assign sl = (p.authors | last) %}
 
-						{% for a in p.authors %}
-							<img src="{{ site.baseurl }}/images/speakers/{{ a | slugify }}-small.jpg" />
-						{% endfor %}
+				{% for a in p.authors %}
+					<img src="{{ site.baseurl }}/images/speakers/{{ a | slugify }}-small.jpg" />
+				{% endfor %}
 
-						<h3>
-						{% for a in p.authors %}
-							<a href="{{ site.baseurl }}/speakers/{{ a | slugify }}">{{ a }}</a>{% if s != "1" %}{% if a != sl %}, {% endif %}{% endif %}
-						{% endfor %}
-						</h3>
+				<h3>
+				{% for a in p.authors %}
+					<a href="{{ site.baseurl }}/speakers/{{ a | slugify }}">{{ a }}</a>{% if s > 0 and a != sl %}, {% endif %}
+				{% endfor %}
+				</h3>
 
-						<p>
-							{{ p.title }}
-							<br />
-							<a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">more...</a>
-						</p>
-					</div>
-				{% endif %}
+				<p>
+					{{ p.title }}
+					<br />
+					<a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">more...</a>
+				</p>
+			</div>				
+		{% endfor %}
+		
+		{% assign workshops = (site.pages | where:"layout","workshop") %}
+		{% assign workshops = (workshops | where:"year",page.year) %}
+		{% assign workshops_first = (workshops | first) %}
+		
+		{% for w in workshops %}
+			{% if w == workshops_first %}
+				<h2>Workshops</h2>
 			{% endif %}
+		
+			<div class="speaker">
+				{% assign s = (w.authors | size) %}
+				{% assign sl = (w.authors | last) %}
+				
+				{% for a in w.authors %}
+					<img src="{{ site.baseurl }}/images/speakers/{{ a | slugify }}-small.jpg" />
+				{% endfor %}
+				
+				<h3>
+				{% for a in w.authors %}
+					<a href="{{ site.baseurl }}/speakers/{{ a | slugify }}">{{ a }}</a>{% if s > 0 and a != sl %}, {% endif %}
+				{% endfor %}
+				</h3>
+				
+				<p>
+					{{ w.title }}
+					<br />
+					<a href="{{ site.baseurl }}{{ w.url | replace:'index.html','' }}">more...</a>
+				</p>
+			</div>
 		{% endfor %}
 	</div>
 

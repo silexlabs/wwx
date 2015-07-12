@@ -15,15 +15,10 @@ slides Isomorphic Haxe: Using Ufront to build apps that work client side or serv
 slides TiVo Activity Haxelib
 
 # 2014 missing
-bio Thomas Fétiveau
-descr Development workflow with Cocktail and NME
-descr What's your favorite Haxe IDE
-descr/slides Haxe Contracts
-speak Todd Kulick 
+slides Haxe Contracts
 talk Haxe/C++ 12h15 - 12h30
 talk/video the cross target puzzle - a visual perspective, justin mills
 descr H3D
-slides Flambe Future
 
 # 2013 missing
 descr/slides Automating cross-platform UI development at Prezi

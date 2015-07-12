@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<br />
+
+<div class="center">
+
+	{% capture p %}{{ page.photos }}{% endcapture %}
+	{% assign nb = (p | size) %}
+
+	{% for i in (1..page.photos) %}
+		{% capture is %}{{ i }}{% endcapture %}
+		{% assign s = (is | size) %}
+		{% assign missing = (nb | minus:s) %}
+		{% assign pad = "" %}
+		{% for j in (1..missing) %}
+			{% capture pad %}0{{ pad }}{% endcapture %}
+		{% endfor %}
+
+		<a href="{{ site.baseurl }}/images/{{page.year}}/gallery/{{ pad }}{{ i }}.jpg">
+			<img src="{{ site.baseurl }}/images/{{page.year}}/gallery/t/{{ pad }}{{ i }}.jpg" />
+		</a>
+	{% endfor %}
+
+</div>

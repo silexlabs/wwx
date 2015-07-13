@@ -200,6 +200,30 @@ header a:hover
     padding-bottom: 10px;
 }
 
+.allspeakers h1
+{
+	margin-bottom: 0;
+	margin-left: 25px;
+}
+
+.speakerlist
+{
+	min-height: 90px;
+}
+
+.speakerlist img
+{
+    float: left;
+    width: 60px;
+    height: 60px;
+    padding: 15px 20px;
+}
+
+.speakerlist h2
+{
+	padding-top: 0;
+}
+
 #haxe
 {
 	display: inline-block;

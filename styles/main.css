@@ -9,7 +9,7 @@
 
 body
 {
-	font-family: sans-serif;
+	font-family: "Open Sans",sans-serif;
 	background: #D3D3D3;
 }
 
@@ -26,25 +26,25 @@ a:hover
 
 header
 {
-	background: #3F434E url('{{ site.baseurl }}/images/header.png') repeat-x bottom left;
+	background: #141419;
 	color: white;
-	border-bottom: solid 1px white;
-	height: 90px;
+	border: medium none;
+	height: 44px;
 }
 
 header img
 {
 	float: left;
-	top: 13px;
-	left: 25px;
+	top: 12px;
 	position: relative;
 }
 
 nav
 {
-	text-align: right;
-	line-height: 90px;
-	padding-right: 25px;
+	line-height: 44px;
+	height: 44px;
+	padding-left: 175px;
+	margin-top: -22px;
 }
 
 .nav, footer, .center
@@ -55,6 +55,11 @@ nav
 nav li, .nav li
 {
 	display: inline-block;
+}
+
+nav li.active a
+{
+	color: #f58220;
 }
 
 .content
@@ -130,6 +135,12 @@ h3
 header a, .aside h3 a
 {
 	color: white;
+	padding: 10px 15px;
+}
+
+header a:hover
+{
+	text-decoration: none;
 }
 
 .about

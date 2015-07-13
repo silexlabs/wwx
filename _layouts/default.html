@@ -23,19 +23,31 @@
 		<header>
 			<div class="content">
 				
-				<a href="{{ site.baseurl }}/{% if page.year %}{{ page.year }}/{% endif %}"><img src="{{ site.baseurl }}/images/logo.png" /></a>
+				<a href="{{ site.baseurl }}/{% if page.year %}{{ page.year }}/{% endif %}">
+					<img src="{{ site.baseurl }}/images/haxe-logo-horizontal-on-dark.svg" />
+					<img src="{{ site.baseurl }}/images/logo.png" />
+				</a>
 			
 				<nav>
 					<ul>
-						<li><a href="{{ site.baseurl }}/">About</a></li>
-						<li>&nbsp;&bull;&nbsp;</li>
-						<li><a href="{{ site.baseurl }}/news/">News</a></li>
-						<li>&nbsp;&bull;&nbsp;</li>
-						<li><a href="{{ site.baseurl }}/editions/">Editions</a></li>
-						<li>&nbsp;&bull;&nbsp;</li>
-						<li><a href="{{ site.baseurl }}/gallery/">Gallery</a></li>
-						<li>&nbsp;&bull;&nbsp;</li>
-						<li><a href="{{ site.baseurl }}/videos/">Videos</a></li>
+						<li class="{% if page.type == 'home' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/">About</a>
+						</li>
+						<li class="{% if page.type == 'news' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/news/">News</a>
+						</li>
+						<li class="{% if page.type == 'editions' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/editions/">Editions</a>
+						</li>
+						<li class="{% if page.type == 'gallery' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/gallery/">Gallery</a>
+						</li>
+						<li class="{% if page.type == 'videos' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/videos/">Videos</a>
+						</li>
+						<li class="{% if page.type == 'speakers' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/speakers/">Speakers</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -54,8 +66,10 @@
 				<li>&nbsp;&bull;&nbsp;</li>
 				<li><a href="{{ site.baseurl }}/{{ page.year }}/schedule/">Schedule</a></li>
 				<li>&nbsp;&bull;&nbsp;</li>
+				{% unless page.year == 2012 %}
 				<li><a href="{{ site.baseurl }}/{{ page.year }}/gallery/">Gallery</a></li>
 				<li>&nbsp;&bull;&nbsp;</li>
+				{% endunless %}
 				<li><a href="{{ site.baseurl }}/{{ page.year }}/live/">Live</a></li>
 			</ul>
 			{% endif %}

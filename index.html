@@ -35,6 +35,14 @@ type: home
 	
 	<div class="box70">
 		<h2>Recent News</h2>
+		
+		<ul>
+			{% for post in site.posts limit:5 %}
+				<li>
+					<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
 	</div>
 	
 	<div class="box30">

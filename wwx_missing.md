@@ -19,6 +19,7 @@ slides Haxe Contracts
 talk Haxe/C++ 12h15 - 12h30
 talk/video the cross target puzzle - a visual perspective, justin mills
 descr H3D
+descr workshops
 
 # 2013 missing
 descr/slides Automating cross-platform UI development at Prezi

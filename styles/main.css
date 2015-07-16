@@ -289,3 +289,9 @@ hr
 {
 	padding-top: 0;
 }
+
+.news img
+{
+	display: block;
+	margin: auto;
+}

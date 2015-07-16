@@ -1,0 +1,19 @@
+---
+layout: default
+type: news
+---
+
+<h2>{{ page.title }}</h2>
+<p>
+	<small>Posted by {{ page.author }} | {{ page.date | date: "%-d %B %Y" }}</small>
+
+	{% if page.originurl %}
+		<br />(This article was originally posted on <a href="http://www.silexlabs.org/{{ page.originurl }}/">silexlabs.org</a>)
+	{% endif %}
+</p>
+
+<br />
+
+<div class="news">
+	{{ content }}
+</div>

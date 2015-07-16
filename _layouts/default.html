@@ -7,6 +7,8 @@
 		<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
 		<link rel="stylesheet" href="{{ site.baseurl }}/styles/main.css" type="text/css">
 		
+		<link href="{{ site.baseurl }}/news.xml" rel="alternate" type="application/rss+xml" title="WWX news" />
+		
 		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
 		<script type="text/javascript">
 		var _gaq = _gaq || [];
@@ -36,7 +38,7 @@
 						<li class="{% if page.type == 'news' %}active{% endif %}">
 							<a href="{{ site.baseurl }}/news/">News</a>
 						</li>
-						<li class="{% if page.type == 'editions' %}active{% endif %}">
+						<li class="{% if page.type == 'edition' %}active{% endif %}">
 							<a href="{{ site.baseurl }}/editions/">Editions</a>
 						</li>
 						<li class="{% if page.type == 'gallery' %}active{% endif %}">

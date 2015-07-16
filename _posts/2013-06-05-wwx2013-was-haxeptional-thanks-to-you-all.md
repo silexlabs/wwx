@@ -9,6 +9,8 @@ originurl: wwx2013-was-haxeptional-thanks-to-you-all
 Silex Labs is proud to announce that the wwx2013 was a success and attracted
 more than 1000 viewers on the live stream!!
 
+<!--more-->
+
 <br />
 
 A big thank you to the 11 speakers and all the attendees. Special thanks also

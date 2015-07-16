@@ -8,6 +8,8 @@ originurl: wwx2014-practical-information
 
 This post is dedicated to the attendees of the wwx2014, you’ll find below all the practical information which could be useful for your trip in Paris.
 
+<!--more-->
+
 <br />
 
 1. The access map for the conference room

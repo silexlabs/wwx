@@ -12,6 +12,8 @@ originurl: worldwide-haxe-conference-2013-announcement
 
 We have the pleasure to announce that the wwx2013, the third Worldwide Haxe Conference, will take place in Paris from May 24th to May 27th 2013. This conference is organized for developers of the Haxe community by Silex Labs in partnership with the Haxe Foundation, Intermedia Paris, Cifacom and Prezi.
 
+<!--more-->
+
 <br />
 
 During this event, you will have the opportunity to discover the latest Haxe’s innovations and strategy. You’ll also be invited to attend and participate to different workshops.

@@ -36,13 +36,14 @@ type: home
 	<div class="box70">
 		<h2>Recent News</h2>
 		
-		<ul>
-			{% for post in site.posts limit:5 %}
-				<li>
-					<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-				</li>
-			{% endfor %}
-		</ul>
+		<p>
+		{% for post in site.posts limit:5 %}
+			<br />
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br />
+			<small>Posted on {{ post.date | date: "%-d %B %Y" }} by {{ post.author }}</small>
+			<br />
+		{% endfor %}
+		</p>
 	</div>
 	
 	<div class="box30">

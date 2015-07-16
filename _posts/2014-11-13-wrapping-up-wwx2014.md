@@ -15,6 +15,8 @@ Silex Labs organized the World Wide Haxe Conference 2014
 cross-platform language from the 23rd to the 26th of May 2014
 in the premises of the school Cifacom.
 
+<!--more-->
+
 <br />
 
 The WWX2014 conference’s objectives were the promotion and development of the Haxe language, and to further improve the cooperation between members of the Haxe community by:

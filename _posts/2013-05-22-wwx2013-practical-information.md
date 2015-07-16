@@ -9,6 +9,8 @@ originurl: wwx2013-practical-informations
 This post is dedicated to the attendees of the wwx2013, you’ll find below all the practical
 information which could be useful for your trip in Paris.
 
+<!--more-->
+
 <br />
 
 You just have to follow the links or « click right » on the images below in

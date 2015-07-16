@@ -15,6 +15,8 @@ The WWX Haxe conference just finished. [Silex Labs](http://silexlabs.org/silexla
 as it gave us the opportunity to bring together wonderful people from all over the world to talk about one of our
 favourite subjects: [Haxe](http://haxe.org/).
 
+<!--more-->
+
 <br />
 
 The conference was sold out, so it goes to show that Haxe has incredible momentum. There were people from France of

@@ -6,10 +6,15 @@ type: news
 
 <h2>News</h2>
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+<p>
+	<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+	(Posted on {{ post.date | date: "%-d %B %Y" }} by {{ post.author }})
+	
+	<br />
+		
+	{{ post.content | split:'<!--more-->' | first | strip_html }}
+	
+	<br /><br />
+</p>
+{% endfor %}

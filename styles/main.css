@@ -138,6 +138,11 @@ header a, .aside h3 a
 	padding: 10px 15px;
 }
 
+.speaker h3 a
+{
+	padding:0;
+}
+
 header a:hover
 {
 	text-decoration: none;

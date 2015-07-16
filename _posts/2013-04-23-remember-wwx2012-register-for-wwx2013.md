@@ -16,6 +16,8 @@ to organize this event in a good mood of friendship and serious work on innovati
 and as last year we have the chance to have great speakers for this event. (the speakers’ list
 is available on the [wwx2013 website]({{ site.baseurl }}/2013/speakers/)
 
+<!--more-->
+
 <br />
 
 We hope that you will be as motivated as we are to be an active member of this community in

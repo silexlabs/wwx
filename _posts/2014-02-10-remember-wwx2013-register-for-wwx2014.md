@@ -18,6 +18,8 @@ Silex Labs is happy and proud to be in charge of the organization
 of the forth Worldwide Haxe conference. Join us at the __WWX2014__
 taking place on 23-26 May in Paris, France.
 
+<!--more-->
+
 <br />
 
 __Why this event?__

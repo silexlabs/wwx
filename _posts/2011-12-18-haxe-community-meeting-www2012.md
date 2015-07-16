@@ -15,6 +15,8 @@ Dear all,
 We are pleased to announce the second haXe community meeting, in april 2012, in Paris, France.
 See [the site about the event here]({{ site.baseurl }}/2012/).
 
+<!--more-->
+
 <br />
 
 The speakers will come from all around the world, and we will be united once again to share the best

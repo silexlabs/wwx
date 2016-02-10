@@ -1,0 +1,122 @@
+html {
+  background: rgba(16, 48, 64, .05);
+  font-size: 200%;
+  font-family: "Consolas";
+  transition: background .5s;
+}
+html.tink-evolution {
+  background: #134;
+}
+header {
+
+}
+em {
+  font-weight: bold !important;
+}
+h1 {
+  font-size: 300% !important;
+}
+
+.small {
+  font-size: 80% !important;
+  color: gray;
+}
+h1:nth-child(n+2), 
+h2:nth-child(n+2), 
+h3:nth-child(n+2), 
+h4:nth-child(n+2), 
+h5:nth-child(n+2), 
+h6:nth-child(n+2) {        
+  margin-top: .5em !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5em !important;
+  font-family: "Consolas" !important;
+  font-weight: bold !important;
+  letter-spacing: -0.03em;
+  color: #134;
+}
+
+.tink-evolution h1, 
+.tink-evolution h2, 
+.tink-evolution h3, 
+.tink-evolution h4, 
+.tink-evolution h5, 
+.tink-evolution h6 {
+  color: #DDDDDD !important;
+}
+blockquote {
+  font-style: normal !important;
+  margin-top: 40px !important;
+}
+blockquote,
+.left {
+  width: 100% !important;
+  text-align: left;
+}
+blockquote footer,
+.right {
+  text-align: right;
+}
+blockquote footer {
+  margin-top: 1em !important;
+}
+a {
+  color: #268 !important;
+  text-decoration: none !important;
+}
+a:hover {
+  color: #268 !important;
+  text-decoration: underline !important;
+}
+pre code {
+  display: inline-block !important;
+  background: white;
+  border: 4px dashed #134 !important;
+  padding: 15px !important;
+}
+pre+pre {
+  padding-left: 60px !important;
+  margin-left: 20px !important;
+}
+pre {
+  font-size: 70% !important;
+
+  letter-spacing: .01em;
+  line-height: 1.3em !important;
+}
+pre+pre:before {
+  position: absolute;
+  display: inline-block;
+  /*background: red;*/
+  top: 50%;
+  /*bottom: 0;*/
+  margin-top: -60px;
+  left: 0;
+  content: "";
+  z-index: -1;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+
+  border-left: 40px solid #134;
+  
+  /*border-left: 10px solid #134 !important;*/
+  /*padding-left: 30px !important;*/
+}      
+code .keyword {
+  color: blue;
+}
+code .type {
+  color: red;
+}
+code .operator {
+  color: green;
+}  
+blockquote,    
+.decorated {
+  font-size: 90% !important;
+  background: white !important;
+  padding: 20px !important;
+  margin: 20px !important;
+  border: 4px dashed #134 !important;        
+} 

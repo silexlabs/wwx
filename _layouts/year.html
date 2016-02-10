@@ -1,0 +1,87 @@
+---
+layout: default
+type: edition
+---
+
+{{ content }}
+
+{% include aside-start.html %}
+
+	<div class="box70">
+		<a name="speakers"></a>
+		<h2>Speakers</h2>
+		{% assign talks = (site.pages | where:"layout","talk") %}
+		{% assign talks = (talks | where:"year",page.year) %}
+		{% for p in talks %}
+			<div class="speaker">
+				{% assign s = (p.authors | size) %}
+				{% assign sl = (p.authors | last) %}
+
+				{% for a in p.authors %}
+					<img src="{{ site.baseurl }}/images/speakers/{{ a | slugify }}-small.jpg" />
+				{% endfor %}
+
+				<h3>
+				{% for a in p.authors %}
+					<a href="{{ site.baseurl }}/speakers/{{ a | slugify }}">{{ a }}</a>{% if s > 0 and a != sl %}, {% endif %}
+				{% endfor %}
+				</h3>
+
+				<p>
+					{{ p.title }}
+					<br />
+					<a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">more...</a>
+				</p>
+			</div>				
+		{% endfor %}
+		
+		{% assign workshops = (site.pages | where:"layout","workshop") %}
+		{% assign workshops = (workshops | where:"year",page.year) %}
+		{% assign workshops_first = (workshops | first) %}
+		
+		{% for w in workshops %}
+			{% if w == workshops_first %}
+				<h2>Workshops</h2>
+			{% endif %}
+		
+			<div class="speaker">
+				{% assign s = (w.authors | size) %}
+				{% assign sl = (w.authors | last) %}
+				
+				{% for a in w.authors %}
+					<img src="{{ site.baseurl }}/images/speakers/{{ a | slugify }}-small.jpg" />
+				{% endfor %}
+				
+				<h3>
+				{% for a in w.authors %}
+					<a href="{{ site.baseurl }}/speakers/{{ a | slugify }}">{{ a }}</a>{% if s > 0 and a != sl %}, {% endif %}
+				{% endfor %}
+				</h3>
+				
+				<p>
+					{{ w.title }}
+					<br />
+					<a href="{{ site.baseurl }}{{ w.url | replace:'index.html','' }}">more...</a>
+				</p>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class="box30">
+		<h2>Tweets</h2>
+
+		{% include tweets.html %}
+	</div>
+
+{% include aside-end.html %}
+
+<h2 style="clear: both">Proudly Hosted by Silex Labs</h2>
+<p>
+	<a href="http://silexlabs.org/">Silex Labs</a>, non profit organization, is proud to be in charge of federating the Haxe community for this major event.
+</p>
+
+<h2>Sponsors</h2>
+
+<div class="center">
+	<img src="{{ site.baseurl }}/images/{{ page.year }}/sponsors.png" />
+</div>

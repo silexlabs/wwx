@@ -1,0 +1,32 @@
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%28%23haxe%20AND%20%23wwx%29%20OR%20%23wwx{{ page.year }}" data-widget-id="570880016830181376" width="285" height="490" data-link-color="#ffac1c">Tweets about WWX{{ page.year }}</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<script>
+	new TWTR.Widget({
+	version: 2,
+	type: 'search',
+	search: '(#haxe AND #wwx) OR #wwx{{ page.year }}',
+	interval: 30000,
+	title: '',
+	subject: '',
+	width: 285,
+	height: 490,
+	theme: {
+	shell: {
+	background: 'none',
+	color: '#ffffff'
+	},
+	tweets: {
+	background: '#ffffff',
+	color: '#444444',
+	links: '#ffac1c'
+	}
+	},
+	features: {
+	scrollbar: false,
+	loop: true,
+	live: true,
+	behavior: 'default'
+	}
+	}).render().start();
+</script>

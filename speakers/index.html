@@ -1,0 +1,65 @@
+---
+layout: default
+type: speakers
+---
+
+<h2>Speakers</h2>
+<p>
+	Find here the list of all the speakers who participated in a WWX.
+</p>
+
+<br />
+
+<div class="center">
+	<a href="#A">A</a> &bull;
+	<a href="#B">B</a> &bull;
+	<a href="#C">C</a> &bull;
+	<a href="#D">D</a> &bull;
+	<a href="#E">E</a> &bull;
+	<a href="#F">F</a> &bull;
+	G &bull;
+	<a href="#H">H</a> &bull;
+	I &bull;
+	<a href="#J">J</a> &bull;
+	K &bull;
+	<a href="#L">L</a> &bull;
+	<a href="#M">M</a> &bull;
+	<a href="#N">N</a> &bull;
+	O &bull;
+	<a href="#P">P</a> &bull;
+	Q &bull;
+	<a href="#R">R</a> &bull;
+	<a href="#S">S</a> &bull;
+	<a href="#T">T</a> &bull;
+	U &bull;
+	<a href="#V">V</a> &bull;
+	W &bull;
+	X &bull;
+	<a href="#Y">Y</a> &bull;
+	Z
+</div>
+
+<br />
+
+{% assign speakers = (site.pages | where:"layout","speaker") %}
+{% assign speakers = (speakers | sort:"speaker") %}
+{% assign last_letter = 'a' %}
+
+<div class="allspeakers">
+{% for speaker in speakers %}
+	{% assign first_letter = (speaker.speaker | split:'' | first ) %}
+	{% if first_letter != last_letter %}
+		{% assign last_letter = first_letter %}
+		<a name="{{ last_letter }}"></a>
+		<h1>{{ last_letter }}</h1>
+	{% endif %}
+
+	<div class="speakerlist">
+		<img src="{{ site.baseurl }}/images/speakers/{{ speaker.speaker | slugify }}-small.jpg" />
+		<h2><a href="{{ site.baseurl }}/speakers/{{ speaker.speaker | slugify }}/">{{ speaker.speaker }}</a></h2>
+		<p>
+			{{ speaker.title }}
+		</p>
+	</div>
+{% endfor %}
+</div>

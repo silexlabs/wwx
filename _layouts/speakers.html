@@ -1,0 +1,35 @@
+---
+layout: default
+subtitle: Speakers
+type: edition
+---
+
+{% assign talks = (site.pages | where:"year",page.year) %}
+{% assign talks = (talks | where:"layout","talk") %}
+{% assign l = (talks | last) %}
+
+{% for p in talks %}
+	<h2><a href="{{ site.baseurl }}{{ p.url | replace:'index.html','' }}">{{ p.title }}</a></h2>
+	<p>
+		{{ p.content }}
+	</p>
+	{% assign speakers = (site.pages | where:"layout","speaker" %}
+	
+	{% for s in speakers %}
+		{% if p.authors contains s.speaker %}
+			<br style="clear: both;" />
+			<img class="mediumspeaker" src="{{ site.baseurl }}/images/speakers/{{ s.speaker | slugify }}-small.jpg" />
+
+			<h3><a href="{{ site.baseurl }}/speakers/{{ s.speaker | slugify }}/">{{ s.speaker }}</a> {{ s.title }}</h3>
+			<p>
+				{{ s.content }}
+			</p>
+		{% endif %}
+	{% endfor %}
+	
+	{% if p == l %}
+		<br style="clear: both;" />
+	{% else %}
+		<hr />
+	{% endif %}
+{% endfor %}

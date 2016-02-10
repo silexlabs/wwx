@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>World Wide Haxe Conference{% if page.year %} {{ page.year }}{% endif %}{% if page.subtitle %} {{ page.subtitle }}{% elsif page.speaker %} {{ page.speaker }}{% elsif page.title %} {{ page.title }}{% endif %}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
+		<link rel="stylesheet" href="{{ site.baseurl }}/styles/main.css" type="text/css">
+		
+		<link href="{{ site.baseurl }}/news.xml" rel="alternate" type="application/rss+xml" title="WWX news" />
+		
+		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+		<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19608894-15']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="content">
+				
+				<a href="{{ site.baseurl }}/{% if page.year %}{{ page.year }}/{% endif %}">
+					<img src="{{ site.baseurl }}/images/haxe-logo-horizontal-on-dark.svg" />
+					<img src="{{ site.baseurl }}/images/logo.png" />
+				</a>
+			
+				<nav>
+					<ul>
+						<li class="{% if page.type == 'home' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/">About</a>
+						</li>
+						<li class="{% if page.type == 'news' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/news/">News</a>
+						</li>
+						<li class="{% if page.type == 'edition' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/editions/">Editions</a>
+						</li>
+						<li class="{% if page.type == 'gallery' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/gallery/">Gallery</a>
+						</li>
+						<li class="{% if page.type == 'videos' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/videos/">Videos</a>
+						</li>
+						<li class="{% if page.type == 'speakers' %}active{% endif %}">
+							<a href="{{ site.baseurl }}/speakers/">Speakers</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<div class="content box">
+			{% if page.year %}
+			<img id="banner" src="{{ site.baseurl }}/images/{{ page.year }}/banner.png" />
+			
+			<ul class="nav">
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/">About</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/speakers/">Speakers</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/location/">Location</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/schedule/">Schedule</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				{% unless page.year == 2012 %}
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/gallery/">Gallery</a></li>
+				<li>&nbsp;&bull;&nbsp;</li>
+				{% endunless %}
+				<li><a href="{{ site.baseurl }}/{{ page.year }}/live/">Live</a></li>
+			</ul>
+			{% endif %}
+			
+			{{ content }}
+		</div>
+		
+		<footer>
+			<a id="haxe" href="http://haxe.org"></a>
+		</footer>
+		
+		<script charset="utf-8" src="{{ site.baseurl }}/scripts/emails.js"></script>
+	</body>
+</html>

@@ -257,8 +257,6 @@ header a.powered-by:hover img {
 header a.powered-by img {
   margin-top: .05em;
   display: block;
-  -webkit-filter: saturate(0) contrast(0);
-          filter: saturate(0) contrast(0);
   width: 120px;
 }
 header a.register {

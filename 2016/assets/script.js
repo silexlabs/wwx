@@ -25,8 +25,8 @@ Swag.main = function() {
 	window.addEventListener("scroll",updateNav);
 	updateNav();
 	var d = new Date();
-	d.setUTCDate(26);
-	d.setUTCMonth(1);
+	d.setUTCDate(8);
+	d.setUTCMonth(2);
 	d.setUTCHours(15);
 	d.setUTCMinutes(0);
 	d.setUTCSeconds(0);

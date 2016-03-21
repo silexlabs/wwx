@@ -177,6 +177,9 @@ header {
           justify-content: center;
   position: relative;
 }
+header.small {
+	height: 30vh;
+}
 header h1 {
   white-space: nowrap;
   font-weight: 900;
@@ -374,7 +377,8 @@ section p {
   margin-top: 0;
 }
 section blockquote a,
-section p a {
+section p a,
+section.talk a {
   font-weight: 900;
 }
 section blockquote {
@@ -533,7 +537,8 @@ section.speakers ul li p {
 section.speakers ul li p a {
   font-weight: 900;
 }
-section.speakers ul li .image {
+section.speakers ul li .image,
+section.talk .image {
   overflow: hidden;
   display: inline-block;
   background: #409e9e;
@@ -564,7 +569,8 @@ section.speakers ul li .image a.add {
 section.speakers ul li .image a.add:hover {
   text-decoration: none;
 }
-section.speakers ul li .image img {
+section.speakers ul li .image img,
+section.talk .image img {
   width: 100%;
   height: 100%;
 }
@@ -573,4 +579,17 @@ section.speakers ul li .image img {
     width: 180px;
     margin: 0;
   }
+}
+section.empty {
+	display: none;
+}
+section.talk h1+p {
+	margin-bottom: 40px;
+}
+section.talk div.content {
+	margin-top: 40px;
+}
+section.talk div.content div.image {
+	float: left;
+	margin-right: 20px
 }

@@ -393,7 +393,6 @@ section:nth-of-type(2n) {
   background: white;
 }
 section.sponsors {
-  background: darkslategray;
   padding: 0;
 }
 section.sponsors ul {
@@ -403,10 +402,22 @@ section.sponsors ul {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content:stretch;
+
+
 }
 section.sponsors ul li {
   margin: 25px;
   list-style: none;
+  
+  
+}
+section.sponsors ul li .image {
+  margin-bottom:25px;
+  text-align:center;
+
 }
 section.sponsors ul li img {
   max-height: 100%;

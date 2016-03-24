@@ -583,8 +583,8 @@ section.talk .image img {
 section.empty {
 	display: none;
 }
-section.talk h1+p {
-	margin-bottom: 40px;
+section.talk p+span {
+	margin-top: 40px;
 }
 section.talk div.content {
 	margin-top: 40px;

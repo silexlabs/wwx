@@ -88,6 +88,10 @@ nav ul li a {
   nav {
     font-size: 10px;
   }
+  header h1 img {
+    display: block;
+    margin: 0 auto !important;
+  }
 }
 @media (max-width: 400px) {
   nav {

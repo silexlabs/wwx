@@ -191,9 +191,13 @@ header h1 img {
   height: 100px;
   margin-right: 20px;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   header h1 {
     font-size: 72px;
+  }
+  
+  nav li:last-child {
+    display: none;
   }
 }
 @media (max-width: 340px) {

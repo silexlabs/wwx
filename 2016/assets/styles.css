@@ -412,15 +412,11 @@ section.sponsors ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  align-content:stretch;
-
-
+  align-content: stretch;
 }
 section.sponsors ul li {
   margin: 25px;
   list-style: none;
-  
-  
 }
 section.sponsors ul li .image {
   text-align: center;

@@ -423,13 +423,17 @@ section.sponsors ul li {
   
 }
 section.sponsors ul li .image {
-  margin-bottom:25px;
-  text-align:center;
-
+  text-align: center;
 }
 section.sponsors ul li img {
   max-height: 100%;
   max-width: 100%;
+}
+section.sponsors ul.silver li img {
+  width: 80%;
+}
+section.sponsors ul.bronze li img {
+  width: 70%;
 }
 section.location {
   padding-bottom: 0;

@@ -199,7 +199,7 @@ header h1 img {
   header h1 {
     font-size: 72px;
   }
-  
+
   nav li:last-child {
     display: none;
   }
@@ -339,10 +339,10 @@ section h3 a,
 section h4 a {
   position: relative;
 }
-section h1 a:before,
-section h2 a:before,
-section h3 a:before,
-section h4 a:before {
+section h1:first-child a:before,
+section h2:first-child a:before,
+section h3:first-child a:before,
+section h4:first-child a:before {
   -webkit-transition: all .25s;
   transition: all .25s;
   content: '#';
@@ -351,10 +351,10 @@ section h4 a:before {
   right: 100%;
   opacity: 0;
 }
-section h1 a:hover,
-section h2 a:hover,
-section h3 a:hover,
-section h4 a:hover {
+section h1:first-child a:hover,
+section h2:first-child a:hover,
+section h3:first-child a:hover,
+section h4:first-child a:hover {
   text-decoration: none;
 }
 section h1 a:hover:before,
@@ -479,7 +479,6 @@ section.location div.details .gallery {
 section.schedule ol.days {
   padding: 10px;
   width: 100%;
-  max-width: 800px;
   text-align: center;
 }
 section.schedule ol.days h2 {
@@ -500,6 +499,13 @@ section.schedule ol.days h2 {
     -webkit-flex-basis: 50%;
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%;
+  }
+}
+@media (min-width: 900px) {
+  section.schedule ol.days > li {
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
   }
 }
 section.schedule ol.days > li {

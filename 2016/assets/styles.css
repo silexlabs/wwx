@@ -537,7 +537,7 @@ a[name] {
   display: block;
 }
 section.intro {
-  padding-top: 50px;
+  /*padding-top: 50px;*/
 }
 section.intro h2 + p {
   margin-top: 1em;
@@ -617,4 +617,9 @@ section.talk div.content {
 section.talk div.content div.image {
 	float: left;
 	margin-right: 20px
+}
+
+.embed {
+  max-width:960px;
+  width:100%;
 }

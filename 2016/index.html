@@ -16,6 +16,7 @@
     <a href="#start"><img src="./assets/logo.svg">Back To Top</a>
     <ul>
       <li><a href="http://www.eventbrite.fr/e/billets-world-wide-haxe-conference-2016-wwx2016-24926284187?utm_source=eb_email&utm_medium=email&utm_campaign=order_confirmation_email&utm_term=eventname&ref=eemailordconf">Register</a></li>
+      <li><a href="#live">Live</a></li>
       <li><a href="#sponsors">Sponsors</a></li>
       <li><a href="#speakers">Speakers</a></li>
       <li><a href="#location">Location</a></li>
@@ -33,16 +34,22 @@
       proudly hosted by
       <img src="./assets/sponsors/silexlabs.org.png">
     </a>
-    <a class="register" href="http://www.eventbrite.fr/e/billets-world-wide-haxe-conference-2016-wwx2016-24926284187?utm_source=eb_email&utm_medium=email&utm_campaign=order_confirmation_email&utm_term=eventname&ref=eemailordconf">
+    <!-- <a class="register" href="http://www.eventbrite.fr/e/billets-world-wide-haxe-conference-2016-wwx2016-24926284187?utm_source=eb_email&utm_medium=email&utm_campaign=order_confirmation_email&utm_term=eventname&ref=eemailordconf">
       Register Now
-    </a>
+    </a> -->
   </header>
 
 
-  <section class="intro">
+<!--   <section class="intro">
     <h2>Be part of the ultimate Haxe community event!</h2>
     <p>This 6th edition of the annual <b>World Wide Haxe conference</b> is the place to be at the end of May 2016.</p>
     <p>Listen to amazing talks spanning the whole spectrum that Haxe has to offer. Participate in various workshops and hackathons. Hang out with fellow Haxers, from all over the planet. Meet the people behind Haxe and its ecosystem. Share your experiences with this versatile technology.</p>
+  </section> -->
+  <section class="intro">
+    <h1><a href="#live">Live Stream</a></h1>
+    <div class="embed">
+    <iframe allowfullscreen id="live" src="https://player.twitch.tv/?channel=silexlabs" frameborder="0" scrolling="no" height="378" width="620"></iframe>
+    </div>
   </section>
 
   <a name="sponsors">&nbsp;</a>
@@ -482,5 +489,23 @@
 
 
       <script src="./assets/script.js"></script>
+      <script>
+      // resize live stream
+      var ifr = document.getElementById('live');
+      var ratio = ifr.getAttribute('width') / ifr.getAttribute('height');
+      console.log('ratio', ratio);
+      ifr.setAttribute('width', '100%');
+
+      function resizeIframe() {
+        var h = ifr.clientWidth / ratio;
+        ifr.setAttribute('height', h + 'px');
+      }
+
+      window.addEventListener('resize', function(e){
+        resizeIframe();
+      });
+      resizeIframe();
+
+      </script>
     </body>
   </html>

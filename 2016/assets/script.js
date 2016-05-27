@@ -24,7 +24,7 @@ Swag.main = function() {
 	};
 	window.addEventListener("scroll",updateNav);
 	updateNav();
-	var d = new Date();
+	/*var d = new Date();
 	d.setUTCDate(8);
 	d.setUTCMonth(2);
 	d.setUTCHours(15);
@@ -47,6 +47,7 @@ Swag.main = function() {
 	updateTime();
 	var t = new haxe_Timer(1000);
 	t.run = updateTime;
+	*/
 };
 var haxe_Timer = function(time_ms) {
 	var me = this;

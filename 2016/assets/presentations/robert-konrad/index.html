@@ -1,0 +1,400 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters">
+			<defs>
+				<filter id="blur">
+					<feGaussianBlur id="blurfilter" in="SourceGraphic" stdDeviation="0,0" />
+				</filter>
+			</defs>
+		</svg>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3 class="fragment">Kore<br/><small>(Kha's C++ sister project)</small></h3>
+					<h3 class="fragment">krafix<br/><small>(Shader cross-compiler)</small></h3>
+					<h3 class="fragment">kraffiti<br/><small>(Image compression tool)</small></h3>
+					<h3 class="fragment">g2/g4<br/><small>(2D/3D Graphics API)</small></h3>
+				</section>
+				<section>
+					<h1 style="filter: url('#blur')">Kha</h1>
+					<h1 class="fragment fade-out" data-fragment-index="2">Returns</h1>
+					<div id="container" style="position:relative;">
+						<p class="fragment fade-in" style="position:absolute; top:0; left:0;" data-fragment-index="1">
+							<span class="fragment fade-out" data-fragment-index="2">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							and it is faster</span>
+						</p>
+						<p id="faster" class="fragment fade-left" style="position:absolute; top:0; left:0;">
+							<span class="fragment fade-out" style="filter: url('#blur')">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							OpenFL</span>
+						</p>
+						<p class="fragment fade-left" style="position:absolute; top:0; left:0;">
+							<span class="fragment fade-out" style="filter: url('#blur')">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Unity</span>
+						</p>
+						<p class="fragment fade-left" style="position:absolute; top:0; left:0;">
+							<span class="fragment fade-out" style="filter: url('#blur')">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Unreal</span>
+						</p>
+					</div>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</section>
+				<section>
+					<h2>Speed</h2>
+					<ol>
+						<li class="fragment">
+							Runtime Performance
+							<ol>
+								<li class="fragment">Rendering</li>
+								<li class="fragment">Load Times</li>
+								<li class="fragment">...</li>
+							</ol>
+						</li>
+						<li class="fragment">
+							Development Workflow
+							<ol>
+								<li class="fragment">Debugging</li>
+								<li class="fragment">Compiling</li>
+								<li class="fragment">...</li>
+							</ol>
+						</li>
+					</ol>
+				</section>
+				<section>
+					<h2>Rendering Performance</h2>
+					<img src="images/bunnymark.png"/>
+				</section>
+				<section>
+					<h2>Bunnymark</h2>
+					<p>Big caveats:<br/>Only draws the same image again and again<br/>No browser tests yet</p>
+				</section>
+				<section>
+					<h2>Why is NME/OpenFL fast?</h2>
+					<pre class="fragment"><code data-trim data-noescape class="haxe">
+for (i in 0...numBunnies) {
+	// ...
+	drawList[index] = bunny.position.x;
+	drawList[index + 1] = bunny.position.y;
+}
+tilesheet.drawTiles(graphics, drawList, false);
+					</code></pre>
+				</section>
+				<section>
+					<h2>Why is Kha fast?</h2>
+					<pre><code data-trim data-noescape class="haxe">
+for (i in 0...bunnies.length) {
+	g.drawImage(bunnies[i].texture, bunnies[i].x, bunnies[i].y);
+}	
+					</code></pre>
+				</section>
+				<section>
+					<h2>Why is Kha fast?</h2>
+					<p class="fragment">I use profilers</p>
+				</section>
+				<section>
+					<h2>Profilers</h2>
+					<ul>
+						<li class="fragment">
+							hxScout
+							<ul>
+								<li class="fragment">Shows data on Haxe level</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							Visual Studio, Xcode, ...
+							<ul><li class="fragment">Shows data on C++ level</li></ul>
+						</li>
+						<li class="fragment">
+							Intel VTune, ...
+							<ul><li class="fragment">Shows data on CPU level</li></ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Why is Kha fast?</h2>
+					<ul>
+						<li class="fragment">Inline Constructors</li>
+						<li class="fragment">
+							32 bit floats
+							<ul><li class="fragment">kha.FastFloat</li></ul>
+						</li>
+						<li class="fragment">
+							SIMD
+							<ul><li class="fragment">kha.simd</li></ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>SIMD</h2>
+					<ul>
+						<li class="fragment">Single Instruction, Multiple Data</li>
+						<li class="fragment">SSE was introduced in 1999 (MMX in 1997)</li>
+						<li class="fragment">Support in C# added in 2014</li>
+						<li class="fragment">Support in JavaScript in development</li>
+						<li class="fragment">Support in C/C++ not in sight (use compiler intrinsics)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>kha.simd</h2>
+					<ul>
+						<li class="fragment">SIMD api similar to simd.js</li>
+						<li class="fragment">Maps to SSE and Neon where available</li>
+						<li class="fragment">Maps to scalar code everywhere else</li>
+					</ul>
+				</section>
+				<section>
+					<h2 class="fragment">Next steps in runtime performance?</h2>
+					<p class="fragment">A comprehensive preformance test suite</p>
+				</section>
+				<section>
+					<h2>Loading Data</h2>
+					<p class="fragment">Typically the biggest data set and also the biggest optimization potential:</p>
+					<p class="fragment">Images</p>
+				</section>
+				<section>
+					<h2>Loading Images</h2>
+					<p class="fragment">Worst possible strategy for a local application:</p>
+					<p class="fragment">Load PNG files</p>
+					<ul>
+						<li class="fragment">Has to be uncompressed before used</li>
+						<li class="fragment">Uncompression is slower than disk read speeds</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Loading Images</h2>
+					Better strategy for a local application:
+					<ul>
+						<li class="fragment">Use light compression which decompressed faster than disk speeds (Snappy)</li>
+						<li class="fragment">Use compressed texture formats when possible</li>
+						<li class="fragment">Preprocess as much as possible</li>
+					</ul>
+				</section>
+				<section>
+					<h2>khafiles</h2>
+					<pre><code data-trim data-noescape class="javascript">
+// uses snappy for non-web targets
+project.addAssets('Assets/**');
+					</code></pre>
+				</section>
+				<section>
+					<h2>khafiles</h2>
+					<pre><code data-trim data-noescape class="javascript">
+// tries to use compressed textures
+project.addAssets('Assets/**', { quality: 0.7 });
+					</code></pre>
+				</section>
+				<section>
+					<h2>khafiles</h2>
+					<pre><code data-trim data-noescape class="javascript">
+project.addAssets('Assets/**', { quality: 0.7, size: 0.5 });
+if (target == Target.Windows)
+	project.addAssets('Assets/**', { name: 'hq-{name}' });
+					</code></pre>
+				</section>
+								<section>
+					<h2>khafiles</h2>
+					<pre><code data-trim data-noescape class="javascript">
+project.addTarget('windows-steam', ['Windows', 'Direct3D11']);
+if (target == 'windows-steam') {
+	// ...
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>khafiles</h2>
+					<pre><code data-trim data-noescape class="javascript">
+project.addShaders('Shaders/**', {
+	name: 'bla-{name}', defines: ['bla=1']
+});
+					</code></pre>
+				</section>
+				<section>
+					<h2>Shader News</h2>
+					<ul>
+						<li class="fragment">Tesselation Shaders</li>
+						<li class="fragment">Compute Shaders</li>
+						<li class="fragment">
+							Automatic compilation and use of shader variants
+							<ul>
+								<li>Specialized shaders for number of supported textures</li>
+								<li>Specialized shaders for instanced rendering backwards compatibility</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>G5</h2>
+					<ul>
+						<li class="fragment">Vulkan/Direct3D12 style API</li>
+						<li class="fragment">G4 on G5 (first version in Kore)</li>
+						<li class="fragment">G5 on G4 (coming soon)</li>
+						<li class="fragment">Lower level control, no magic performance boost compared to G4</li>
+						<li class="fragment">
+							Considerable, magic performance boost in G2 coming up
+							<ul>
+								<li class="fragment">
+									Texture atlas usage outdated when using G5
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p><video src="videos/polylight.mp4"/></p>
+					<p><a href="http://luboslenco.com/notes/">http://luboslenco.com/notes/</a></p>
+				</section>
+				<section>
+					<h2>Audio</h2>
+					<ul>
+						<li class="fragment">Object based surround audio</li>
+						<li class="fragment">Dolby Atmos/DTS:X support in research</li>
+						<li class="fragment">Surround simulation on headphones available<br/>(only htm5 currently, based on hrtf-panner-js)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Native Performance</h2>
+					<p class="fragment">It's a lie</p>
+					<p class="fragment">Your Flash and OpenFL experience does not apply</p>
+					<p class="fragment">Haxe/JavaScript regularly outperforms Haxe/C++</p>
+				</section>
+				<section>
+					<table>
+						<tr><td></td><td>Haxe/JavaScript</td><td>Haxe/C++</td></tr>
+						<tr class="fragment"><td>Code optimization</td><td>+</td><td>++</td></tr>
+						<tr class="fragment"><td>Garbage Collection</td><td>++</td><td>-</td></tr>
+						<tr class="fragment"><td>Number types</td><td>-</td><td>-</td></tr>
+						<tr class="fragment"><td>Introspection</td><td>-</td><td>+</td></tr>
+					</table>
+				</section>
+				<section>
+					<h2>Chrome</h2>
+					<ul>
+						<li class="fragment">Fast code execution for Haxe thanks to V8</li>
+						<li class="fragment">WebGL's feature set is severely outdated</li>
+						<li class="fragment">WebGL is not as fast as it could be because of security</li>
+						<li class="fragment">Still no compute shader support</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Krom</h2>
+					<ul>
+						<li>Fast code execution for Haxe thanks to V8</li>
+						<li>No WebGL restrictions</li>
+						<li>Speed is priority 1</li>
+						<li>Compute shaders coming</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Krom</h2>
+					<ul>
+						<li>Alternative for deployment</li>
+						<li>Typically faster for unoptimized code</li>
+						<li>Exception: iOS</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Krom</h2>
+					<ul>
+						<li>Special development features</li>
+						<li>Soon to be the new default debugger in Kode Studio</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Kode Studio</h2>
+					<ul>
+						<li class="fragment">Fork of Visual Studio Code</li>
+						<li class="fragment">
+							Uses the vshaxe extension
+							<ul>
+								<li>Developed in tandem with Haxe 3.3</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							Uses JavaScript for Haxe debugging
+							<ul>
+								<li>Much faster compilation than C++</li>
+								<li>Much better feature set and runtime performance than Flash (especially with Krom)</li>
+								<li>Improvements in Haxe 3.3</li>
+							</ul>
+						</li>
+				</section>
+				<section>
+					<h2>Kode Studio</h2>
+					<p>Demo</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				slideNumber: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+			Reveal.addEventListener('fragmentshown', function (event) {
+				if (event.fragment === document.getElementById('faster')) {
+					var xblur = 0;
+					function animateBlur() {
+						document.getElementById('blurfilter').setAttribute('stdDeviation', xblur + ',0');
+						xblur += 0.02;
+						if (xblur < 5) window.setTimeout(function () { animateBlur(); }, 100);
+					}
+					animateBlur();
+				}
+			});
+		</script>
+	</body>
+</html>

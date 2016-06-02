@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="sl-root decks show  mz-applicationcache mz-history mz-localstorage mz-svg mz-opacity mz-rgba mz-backgroundsize mz-cssanimations mz-csstransforms mz-csstransforms3d mz-csstransitions mz-flexbox mz-flexboxlegacy mz-fullscreen loaded ua-linux ua-firefox has-visible-scrollbars fonts-are-ready reveal-is-ready" data-account="free">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Unreal.hx by Cauê Waneck</title>
+    <meta name="description" content="A presentation created with Slides.">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="css.css" rel="stylesheet" type="text/css" data-application-font="opensans">
+    <link href="slides-1df814f963530a8557bab503c81c1049.css" media="all" rel="stylesheet">
+    <link href="application-4dc7fc764ca841b59c7a6bf9abd1e675.css" media="all" rel="stylesheet">
+    <link href="deck-v2-4902e0ea97484b5922b459f62ed30634.css" media="all" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="//assets.slid.es/assets/html5shiv-b51d49ab0e89834a02ffce4a59905afb.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+      .reveal-frame, .marquee, .main, .container, html.decks.show {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="container" class="container">
+     <div id="main" class="main" role="main">
+
+
+
+
+
+<div class="marquee">
+
+	<div class="reveal-frame">
+		<div class="reveal-viewport theme-font-opensans theme-color-black-orange">
+			<div data-background-transition="slide" data-transition-speed="default" role="application" class="reveal slide">
+				<div style="width: 960px; height: 700px;" class="slides">
+					<section style="display: block;" class="present" data-id="35c4e0e160b0ca40331cfa05489e212a"><div class="sl-block" data-block-type="text" style="width: 800px; left: 70px; top: 210px; height: auto;" data-block-id="b375a98429a3c3119dc9a5727c849b96"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Unreal.hx</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 728px; left: 116px; top: 400.5px;" data-block-id="e3882bde1a68f172524db1ec9a04a7e2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(204, 204, 204);">
+<p>Using Haxe with the Unreal Engine 4</p>
+
+<p>https://bit.ly/unrealhx</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 280px; top: 592px;" data-block-id="6a8af2121133adc37290fb8ef8268aa7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: right; color: rgb(103, 78, 167);">
+<p>By Cauê Waneck ( @cwaneck )</p>
+</div></div></section><section style="display: block;" class="future" aria-hidden="true" data-id="44950898e81002afbc5c7c79b4779eac" hidden=""><div class="sl-block" data-block-type="text" style="width: 800px; left: 79px; top: 50px; height: auto;" data-block-id="65f26e168ece184c372fd44a6877fe3c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="color: rgb(0, 255, 0); z-index: 11;">
+<pre style="text-align:center"><span style="font-size:1.4em">[~]$ whoami</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 436.378px; height: 69px; left: 472px; top: 316px;" data-block-id="4b1f4e819de16cb5b154a356c244e1e8"><div class="sl-block-content" style="z-index: 12;"><img src="Pasted_image_at_2016_05_20_05_04_PM.png" data-natural-width="468" data-natural-height="74"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 360px; height: 137.345px; left: 10px; top: 280px;" data-block-id="2bdf92d3e48fab2d16d5f6599a3a970e"><div class="sl-block-content" style="z-index: 13;"><img src="haxe-logo__1_.png" data-natural-width="595" data-natural-height="227"></div></div></section><section style="display: block;" aria-hidden="true" class="stack future" data-id="058f0ac039d05230098506d4fd084693" hidden=""><section style="display: block;" data-id="e27bd14964acc6c566a4226dd494bccf"><div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 370px; height: 261.602px; left: 304px; top: 210px;" data-block-id="6244191dc2820c249843533d106c7e36"><div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="0"><img src="sloth_heart_emoji_by_crepescape-d956v2u.png" data-natural-width="1024" data-natural-height="724"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 638.757px; height: 101px; left: 170px; top: 109px;" data-block-id="6d62e1bc3286d8be4cd56ed9c72f1fc2"><div class="sl-block-content" style="z-index: 12;"><img src="Pasted_image_at_2016_05_20_05_04_PM.png" data-natural-width="468" data-natural-height="74"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 534.714px; height: 204px; left: 197px; top: 426px;" data-block-id="4be3e6e9686493adde82cca85b5fb4c1"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="1"><img src="haxe-logo__1_.png" data-natural-width="595" data-natural-height="227"></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="298aedcc06252ea107f64e7d91cfd327">
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 450.92px; height: 156px; left: 255px; top: 15px;" data-block-id="c44076d349eefc94af640e09caae7ea1"><div class="sl-block-content" style="z-index: 12;"><img src="WZ_logo_fullcolor.png" data-natural-width="792" data-natural-height="274"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 674.667px; height: 506px; left: 143px; top: 167px;" data-block-id="35dfdfe4d38e1312b6ad35d98eaae741"><div class="sl-block-content" style="z-index: 11;"><img src="EN_screen4_Retina_2048x1536.png" data-natural-width="1200" data-natural-height="900"></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="a3395cc93d39d0c26419dc05aa4dc13b">
+<div class="sl-block" data-block-type="image" style="width: 450.92px; height: 156px; left: 255px; top: 15px;" data-block-id="eaafc14fca8efc5ad1255261e8fd2901"><div class="sl-block-content" style="z-index: 10;"><img src="WZ_logo_fullcolor.png" data-natural-width="792" data-natural-height="274"></div></div>
+<div class="sl-block" data-block-type="iframe" style="min-width: 30px; min-height: 30px; width: 888px; height: 482px; left: 36px; top: 189px;" data-block-id="9e72d177670c50fc17f0deaee5e86318"><div class="sl-block-content" style="z-index: 12;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock" data-src="https://www.youtube.com/embed/wd1edGI__jc?enablejsapi=1" data-autoplay=""></iframe></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="1d47e3f3cf67a98b5d39857f9093dd0b"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="145c2df96ea9b0ecc265624db505bf5b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Haxe in World Zombination</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 210px;" data-block-id="dbc03c31b304f7f4e59bad912e9a7143"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;" dir="ui">
+<ul>
+	<li class="fragment" data-fragment-index="0">Technology-agnostic game logic</li>
+	<li class="fragment" data-fragment-index="1">Free to choose the technology that best suits us</li>
+	<li class="fragment" data-fragment-index="2">Run same game logic on both client and server</li>
+	<li class="fragment" data-fragment-index="3">Used macros to transform synchronous code in asynchronous</li>
+	<li class="fragment" data-fragment-index="4">Static typing + concise language</li>
+	<li class="fragment" data-fragment-index="5">Native access</li>
+</ul>
+</div></div></section></section><section style="display: none;" aria-hidden="true" class="stack future" data-id="fe207e85062551cf0701001e2ae71408" hidden=""><section style="display: none;" data-id="710c88487297e7ae06fa8bce37385228"><div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 375px; height: 375px; left: 293px; top: 163px;" data-block-id="5b98529dc7e0e3106180cd136c4fb2ea"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="256" data-natural-height="256" data-src="unreal-logo.png"></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="73915cd17d63c2800cfd5baabb3bf9c8"><div class="sl-block" data-block-type="image" style="width: 238px; height: 238px; left: 361px; top: 0px;" data-block-id="0e4072205b9a261e954cd4d66e2600ce"><div class="sl-block-content" style="z-index: 16;"><img data-natural-width="256" data-natural-height="256" data-src="unreal-logo.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 844px; left: 85px; top: 264px;" data-block-id="a63063043687cbe0c4af398305e550d7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; text-align: left;" dir="ui">
+<ul>
+	<li>Used by many AAA games</li>
+	<li class="fragment" data-fragment-index="0">Targets all major platforms - desktop, mobile and console</li>
+	<li class="fragment" data-fragment-index="1">VR support</li>
+	<li class="fragment" data-fragment-index="2">Source code available</li>
+	<li class="fragment" data-fragment-index="3">Great out-of-the-box multiplayer support</li>
+</ul>
+</div></div>
+
+</section><section style="display: none;" aria-hidden="true" class="future" data-id="8ead62d616ca0f52d90e1a49a3cb2264"><div class="sl-block" data-block-type="iframe" style="min-width: 30px; min-height: 30px; width: 911px; height: 521px; left: 25px; top: 89px;" data-block-id="452cafbf8beabaa4aca4661fe12f1826"><div class="sl-block-content" style="z-index: 11;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock" data-src="https://www.youtube.com/embed/dO2rM-l-vdQ?start=0&amp;end=84&amp;enablejsapi=1" data-autoplay=""></iframe></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="97063e19b7201b556306068a6968063c"><div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 219px; height: 219px; left: 661px; top: 31px;" data-block-id="a29ec9a06b65e7c277ecd30d33749918"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="256" data-natural-height="256" data-src="unreal-logo.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 20px; top: 81px;" data-block-id="f853d7a29e75caf2676e37fec4dd4b73"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
+<ul>
+	<li class="visible">C++ is the only official language</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 360px; height: 202.5px; left: 80px; top: 147px;" data-block-id="dd41812d3d567c8bb0cc56dafc83f315"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0"><img data-natural-width="512" data-natural-height="288" data-src="cpp-1.jpg"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 414px; height: auto;" data-block-id="77128025ff8048730fd1d18214e40805"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 14;" data-fragment-index="1">
+<blockquote>
+<pre><span style="font-size:1.0em"><span style="text-align:start">C++ can be difficult to integrate with itself let alone other languages</span></span></pre>
+</blockquote>
+</div></div>
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 860px; left: 20px; top: 592px;" data-block-id="0777a3be85e7aa779c128081985d6104"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; text-align: left;">
+<ul>
+	<li class="fragment" data-fragment-index="2">Supports also visual coding with Blueprints</li>
+</ul>
+</div></div></section></section><section style="display: none;" aria-hidden="true" class="stack future" data-id="084b8be3fefca387bdd49ca68a19ca88" hidden=""><section style="display: none;" data-id="f492eb7cdf8c702df261e3cad651e662"><div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 403.526px; height: 534px; left: 278px; top: 83px;" data-block-id="8b64d5e5d2c6896cfb8a20b68fbf687e"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="300" data-natural-height="397" data-src="68525143.jpg"></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="b5cc232416e81d513fd8bf16485778dd"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 63px; height: auto;" data-block-id="68193e39e0f35140fd8c61f25c774c7d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Unreal.hx !</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 840px; left: 60px; top: 218px;" data-block-id="600beabee7bbd4f0595e9fa420a11f50"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Uses Haxe's C++ backend</li>
+	<li class="fragment" data-fragment-index="1">Write everything in Haxe</li>
+	<li class="fragment" data-fragment-index="2">Use external C++ code as easily as possible</li>
+	<li class="fragment" data-fragment-index="3">Compatible with the cppia VM</li>
+	<li class="fragment" data-fragment-index="4">DCE compatible</li>
+	<li class="fragment" data-fragment-index="5">Support EVERY C++ feature</li>
+</ul>
+</div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="3151df0bed6e2ffaac9f0dbfa740b6f8"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 63px; height: auto;" data-block-id="b44bb48010a27117164203fc486a95f0"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Why Unreal.hx?</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 840px; left: 60px; top: 219px;" data-block-id="50372b042ec921a1f6bef997835a1c86"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Well, it uses Haxe</li>
+	<li class="fragment" data-fragment-index="1">Garbage collection</li>
+	<li class="fragment" data-fragment-index="2">Porting from C++ to Haxe is easy</li>
+	<li class="fragment" data-fragment-index="3">Partition between C++ and Haxe</li>
+	<li class="fragment" data-fragment-index="4">Hxcpp for performance, cppia+@:live for fast iteration</li>
+	<li class="fragment" data-fragment-index="5">Most feature-rich language binding for Unreal</li>
+	<li class="fragment" data-fragment-index="6">Free, Open Source Software</li>
+	<li class="fragment" data-fragment-index="7">Target other platforms - e.g. server</li>
+</ul>
+</div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="31d80cff32a8371c24857c06eecf0002"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 9px; height: auto;" data-block-id="b661fceead957876c56f4d3665020607"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Streamline</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 809.912px; height: 443px; left: 75px; top: 140px;" data-block-id="c7e1612a1f144611fd62271bf94176d4"><div class="sl-block-content" style="z-index: 14;"><img data-natural-width="958" data-natural-height="524" data-src="image6.jpeg"></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="12cf893558194c6d9738b91c8dc39b45"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 8px; height: auto;" data-block-id="b3ca3d911fe1110416ab42a98d68c2ed"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Streamline</h1>
+</div></div>
+<div class="sl-block" data-block-type="iframe" style="width: 894px; height: 529px; left: 33px; top: 119px;" data-block-id="d8a54831f44dc44b074037e706315c5a"><div class="sl-block-content" style="z-index: 12;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock" data-src="https://www.youtube.com/embed/cQPmAeL8Ymk?enablejsapi=1" data-autoplay=""></iframe></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="1278d94d210998b722f3dd24b6a6bf64"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 8px; height: auto;" data-block-id="2204721a4a1f7eb054452d1442e619dd"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Streamline</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 591px;" data-block-id="0e1ecc81ea2f570779a3f452c0bdab61"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p><strong>Closed beta this year!</strong></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 673.778px; height: 379px; left: 143px; top: 161px;" data-block-id="019581068bd8863e3939c5049861c9a5"><div class="sl-block-content" style="z-index: 14;"><img data-natural-width="1600" data-natural-height="900" data-src="image17.jpg"></div></div></section></section><section style="display: none;" aria-hidden="true" class="stack future" data-id="cb34be4ec81ba260260ab7bcea540b05" hidden=""><section style="display: none;" data-id="75184b0eb556bfd1bff521420fb7337b"><div class="sl-block" data-block-type="text" style="width: 527px; left: 15px; top: 33px; height: auto;" data-block-id="63c98fd7f6d605b4e99ae95e2e852022"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>The big picture</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 340.324px; height: 665px; left: 550px; top: 18px;" data-block-id="8236f8f138b88c0f20660848f5344ddb"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="2"><img data-natural-width="435" data-natural-height="850" data-src="Screenshot_from_2016-05-22_06-46-42.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 507px; left: 35px; top: 132px;" data-block-id="d2ad7ea4bae4c916e4938d6e22eb0766"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Needs latest Haxe 3.3+</li>
+	<li class="fragment" data-fragment-index="1">Targets Unreal 4.11</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 186.059px; height: 461px; left: 166.941px; top: 227px;" data-block-id="02a37a47b23c4f519406b31e494a056c"><div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="3"><img data-natural-width="157" data-natural-height="389" data-src="Compilation_Process__3_.png"></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="401df7f98bf394e40aff6acd828f0273"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 22px; height: auto;" data-block-id="4a9677fd9e8413562159b3d5cbda4f35"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Externs</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 450px; height: 547px; left: 30px; top: 119px;" data-block-id="145e864d4bd972ad31819ca5a109d334"><div class="sl-block-content fragment" style="z-index: 12; font-size: 65%;" data-highlight-theme="monokai" data-fragment-index="0"><pre class="actionscript"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">package</span> <span class="hljs-title">unreal</span>;
+
+/**
+  <span class="hljs-title">Actor</span> <span class="hljs-title">is</span> <span class="hljs-title">the</span> <span class="hljs-title">base</span> <span class="hljs-title">class</span> <span class="hljs-title">for</span> <span class="hljs-title">an</span> <span class="hljs-title">Object</span> <span class="hljs-title">that</span> <span class="hljs-title">can</span> <span class="hljs-title">be</span> <span class="hljs-title">placed</span> <span class="hljs-title">or</span> <span class="hljs-title">spawned</span> <span class="hljs-title">in</span> <span class="hljs-title">a</span> <span class="hljs-title">level</span>.
+  <span class="hljs-title">Actors</span> <span class="hljs-title">may</span> <span class="hljs-title">contain</span> <span class="hljs-title">a</span> <span class="hljs-title">collection</span> <span class="hljs-title">of</span> <span class="hljs-title">ActorComponents</span>, <span class="hljs-title">which</span> <span class="hljs-title">can</span> <span class="hljs-title">be</span> <span class="hljs-title">used</span> <span class="hljs-title">to</span> <span class="hljs-title">control</span> <span class="hljs-title">how</span> <span class="hljs-title">actors</span> <span class="hljs-title">move</span>, <span class="hljs-title">how</span> <span class="hljs-title">they</span> <span class="hljs-title">are</span> <span class="hljs-title">rendered</span>, <span class="hljs-title">etc</span>.
+  <span class="hljs-title">The</span> <span class="hljs-title">other</span> <span class="hljs-title">main</span> <span class="hljs-title">function</span> <span class="hljs-title">of</span> <span class="hljs-title">an</span> <span class="hljs-title">Actor</span> <span class="hljs-title">is</span> <span class="hljs-title">the</span> <span class="hljs-title">replication</span> <span class="hljs-title">of</span> <span class="hljs-title">properties</span> <span class="hljs-title">and</span> <span class="hljs-title">function</span> <span class="hljs-title">calls</span> <span class="hljs-title">across</span> <span class="hljs-title">the</span> <span class="hljs-title">network</span> <span class="hljs-title">during</span> <span class="hljs-title">play</span>.
+
+  @<span class="hljs-title">see</span> <span class="hljs-title">https</span>://<span class="hljs-title">docs</span>.<span class="hljs-title">unrealengine</span>.<span class="hljs-title">com</span>/<span class="hljs-title">latest</span>/<span class="hljs-title">INT</span>/<span class="hljs-title">Programming</span>/<span class="hljs-title">UnrealArchitecture</span>/<span class="hljs-title">Actors</span>/
+  @<span class="hljs-title">see</span> <span class="hljs-title">UActorComponent</span>
+**/
+@:<span class="hljs-title">glueCppIncludes</span>("<span class="hljs-title">GameFramework</span>/<span class="hljs-title">Actor</span>.<span class="hljs-title">h</span>")
+@:<span class="hljs-title">uextern</span> <span class="hljs-title">extern</span> <span class="hljs-title">class</span> <span class="hljs-title">AActor</span> <span class="hljs-title">extends</span> <span class="hljs-title">unreal</span>.<span class="hljs-title">UObject</span> {</span>
+
+  <span class="hljs-comment">/**
+    Array of ActorComponents that are created by blueprints and serialized per-instance.
+  **/</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> BlueprintCreatedComponents : unreal.TArray&lt;unreal.UActorComponent&gt;;
+
+  #<span class="hljs-keyword">if</span> WITH_EDITORONLY_DATA
+  <span class="hljs-comment">/**
+    Local space pivot offset for the actor
+  **/</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> PivotOffset : unreal.FVector;
+  #end <span class="hljs-comment">// WITH_EDITORONLY_DATA</span>
+
+  <span class="hljs-comment">/**
+    Returns the point of view of the actor.
+    Note that this doesn't mean the camera, but the 'eyes' of the actor.
+    For example, for a Pawn, this would define the eye height location,
+    and view rotation (which is different from the pawn rotation which has a zeroed pitch component).
+    A camera first person view will typically use this view point. Most traces (weapon, AI) will be done from this view point.
+
+    @param       OutLocation - location of view point
+    @param       OutRotation - view rotation of actor.
+  **/</span>
+  @:thisConst <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">GetActorEyesViewPoint</span><span class="hljs-params">(OutLocation : unreal.PRef&lt;unreal.FVector&gt;, OutRotation : unreal.PRef&lt;unreal.FRotator&gt;)</span> : Void</span>;
+
+  <span class="hljs-comment">/**
+    Script exposed version of FindComponentByClass
+  **/</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">GetComponentByClass</span><span class="hljs-params">(ComponentClass : unreal.TSubclassOf&lt;unreal.UActorComponent&gt;)</span> : unreal.<span class="hljs-title">UActorComponent</span></span>;
+</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 453px; height: 547px; left: 491px; top: 119px;" data-block-id="c749f729dba5ce48878b3df5bbec7cc9"><div class="sl-block-content fragment" style="z-index: 13; font-size: 65%;" data-highlight-theme="monokai" data-fragment-index="1"><pre class="actionscript"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">package</span> <span class="hljs-title">unreal</span>;
+
+/**
+  <span class="hljs-title">Actor</span> <span class="hljs-title">is</span> <span class="hljs-title">the</span> <span class="hljs-title">base</span> <span class="hljs-title">class</span> <span class="hljs-title">for</span> <span class="hljs-title">an</span> <span class="hljs-title">Object</span> <span class="hljs-title">that</span> <span class="hljs-title">can</span> <span class="hljs-title">be</span> <span class="hljs-title">placed</span> <span class="hljs-title">or</span> <span class="hljs-title">spawned</span> <span class="hljs-title">in</span> <span class="hljs-title">a</span> <span class="hljs-title">level</span>.
+  <span class="hljs-title">Actors</span> <span class="hljs-title">may</span> <span class="hljs-title">contain</span> <span class="hljs-title">a</span> <span class="hljs-title">collection</span> <span class="hljs-title">of</span> <span class="hljs-title">ActorComponents</span>, <span class="hljs-title">which</span> <span class="hljs-title">can</span> <span class="hljs-title">be</span> <span class="hljs-title">used</span> <span class="hljs-title">to</span> <span class="hljs-title">control</span> <span class="hljs-title">how</span> <span class="hljs-title">actors</span> <span class="hljs-title">move</span>, <span class="hljs-title">how</span> <span class="hljs-title">they</span> <span class="hljs-title">are</span> <span class="hljs-title">rendered</span>, <span class="hljs-title">etc</span>.
+  <span class="hljs-title">The</span> <span class="hljs-title">other</span> <span class="hljs-title">main</span> <span class="hljs-title">function</span> <span class="hljs-title">of</span> <span class="hljs-title">an</span> <span class="hljs-title">Actor</span> <span class="hljs-title">is</span> <span class="hljs-title">the</span> <span class="hljs-title">replication</span> <span class="hljs-title">of</span> <span class="hljs-title">properties</span> <span class="hljs-title">and</span> <span class="hljs-title">function</span> <span class="hljs-title">calls</span> <span class="hljs-title">across</span> <span class="hljs-title">the</span> <span class="hljs-title">network</span> <span class="hljs-title">during</span> <span class="hljs-title">play</span>.
+
+  @<span class="hljs-title">see</span> <span class="hljs-title">https</span>://<span class="hljs-title">docs</span>.<span class="hljs-title">unrealengine</span>.<span class="hljs-title">com</span>/<span class="hljs-title">latest</span>/<span class="hljs-title">INT</span>/<span class="hljs-title">Programming</span>/<span class="hljs-title">UnrealArchitecture</span>/<span class="hljs-title">Actors</span>/
+  @<span class="hljs-title">see</span> <span class="hljs-title">UActorComponent</span>
+**/
+@:<span class="hljs-title">glueCppIncludes</span>("<span class="hljs-title">GameFramework</span>/<span class="hljs-title">Actor</span>.<span class="hljs-title">h</span>")
+@:<span class="hljs-title">uextern</span> <span class="hljs-title">class</span> <span class="hljs-title">AActor</span> <span class="hljs-title">extends</span> <span class="hljs-title">unreal</span>.<span class="hljs-title">UObject</span> {</span>
+
+  <span class="hljs-comment">/**
+    Array of ActorComponents that are created by blueprints and serialized per-instance.
+  **/</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> BlueprintCreatedComponents(<span class="hljs-keyword">get</span>,<span class="hljs-keyword">set</span>):unreal.PPtr&lt;unreal.TArray&lt;unreal.UActorComponent&gt;&gt;;
+
+  @:glueCppIncludes(<span class="hljs-string">"GameFramework/Actor.h"</span>, <span class="hljs-string">"uhx/Wrapper.h"</span>)
+  @:glueHeaderIncludes(<span class="hljs-string">"IntPtr.h"</span>, <span class="hljs-string">"VariantPtr.h"</span>)
+  @:glueHeaderCode(<span class="hljs-string">"static void GetActorEyesViewPoint(unreal::UIntPtr self, unreal::VariantPtr OutLocation, unreal::VariantPtr OutRotation);"</span>)
+  @:glueCppCode(<span class="hljs-string">"void uhx::glues::AActor_Glue_obj::GetActorEyesViewPoint(unreal::UIntPtr self, unreal::VariantPtr OutLocation, unreal::VariantPtr OutRotation) {\n\t( (AActor *) self )-&gt;GetActorEyesViewPoint(*::uhx::StructHelper&lt; FVector &gt;::getPointer(OutLocation), *::uhx::StructHelper&lt; FRotator &gt;::getPointer(OutRotation));\n}"</span>)
+  @:thisConst
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">GetActorEyesViewPoint</span><span class="hljs-params">(OutLocation : unreal.PRef&lt;unreal.FVector&gt;, OutRotation : unreal.PRef&lt;unreal.FRotator&gt;)</span> : Void </span>{
+    uhx.glues.AActor_Glue.GetActorEyesViewPoint(unreal.helpers.HaxeHelpers.getUObjectWrapped(<span class="hljs-keyword">this</span>), OutLocation, OutRotation);
+  }
+
+  @:glueCppIncludes(<span class="hljs-string">"GameFramework/Actor.h"</span>, <span class="hljs-string">"uhx/Wrapper.h"</span>, <span class="hljs-string">"Containers/Array.h"</span>, <span class="hljs-string">"Components/ActorComponent.h"</span>, <span class="hljs-string">"uhx/glues/TArrayImpl_Glue_UE.h"</span>)
+  @:glueHeaderIncludes(<span class="hljs-string">"IntPtr.h"</span>, <span class="hljs-string">"VariantPtr.h"</span>)
+  @:glueHeaderCode(<span class="hljs-string">"static unreal::VariantPtr get_BlueprintCreatedComponents(unreal::UIntPtr self);"</span>)
+  @:glueCppCode(<span class="hljs-string">"unreal::VariantPtr uhx::glues::AActor_Glue_obj::get_BlueprintCreatedComponents(unreal::UIntPtr self) {\n\treturn ::uhx::TemplateHelper&lt;TArray&lt;UActorComponent *&gt;&gt;::fromPointer( (&amp;(( (AActor *) self )-&gt;BlueprintCreatedComponents)) );\n}"</span>)
+  @:<span class="hljs-keyword">final</span> @:nonVirtual
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get_BlueprintCreatedComponents</span><span class="hljs-params">()</span> : unreal.<span class="hljs-title">PPtr</span>&lt;<span class="hljs-title">unreal</span>.<span class="hljs-title">TArray</span>&lt;<span class="hljs-title">unreal</span>.<span class="hljs-title">UActorComponent</span>&gt;&gt; </span>{
+    <span class="hljs-keyword">return</span> ( @:privateAccess unreal.TArrayImpl.fromPointer( uhx.glues.AActor_Glue.get_BlueprintCreatedComponents(unreal.helpers.HaxeHelpers.getUObjectWrapped(<span class="hljs-keyword">this</span>)) ) : unreal.PPtr&lt;unreal.TArray&lt;unreal.UActorComponent&gt;&gt; );
+  }
+
+  <span class="hljs-comment">/**
+    Script exposed version of FindComponentByClass
+  **/</span>
+  @:glueCppIncludes(<span class="hljs-string">"GameFramework/Actor.h"</span>, <span class="hljs-string">"UObject/ObjectBase.h"</span>, <span class="hljs-string">"Components/ActorComponent.h"</span>)
+  @:glueHeaderIncludes(<span class="hljs-string">"IntPtr.h"</span>)
+  @:glueHeaderCode(<span class="hljs-string">"static unreal::UIntPtr GetComponentByClass(unreal::UIntPtr self, unreal::UIntPtr ComponentClass);"</span>)
+  @:glueCppCode(<span class="hljs-string">"unreal::UIntPtr uhx::glues::AActor_Glue_obj::GetComponentByClass(unreal::UIntPtr self, unreal::UIntPtr ComponentClass) {\n\treturn ( (unreal::UIntPtr) (( (AActor *) self )-&gt;GetComponentByClass(( (TSubclassOf&lt;UActorComponent&gt;) (UClass *) ComponentClass ))) );\n}"</span>)
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">GetComponentByClass</span><span class="hljs-params">(ComponentClass : unreal.TSubclassOf&lt;unreal.UActorComponent&gt;)</span> : unreal.<span class="hljs-title">UActorComponent</span> </span>{
+    <span class="hljs-keyword">return</span> ( cast unreal.UObject.wrap(uhx.glues.AActor_Glue.GetComponentByClass(unreal.helpers.HaxeHelpers.getUObjectWrapped(<span class="hljs-keyword">this</span>), unreal.helpers.HaxeHelpers.getUObjectWrapped(ComponentClass))) : unreal.UActorComponent );
+  }
+</code></pre></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="aaa0aa8cba22a65360a8b1fbbc7713bc"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 22px; height: auto;" data-block-id="7870e36745db488e66dd04b0393c5e70"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Externs</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 893px; height: 546px; left: 34px; top: 121.5px;" data-block-id="d64ff9ea41570b8f8c7d28d86ba9fa75"><div class="sl-block-content" style="z-index: 12; font-size: 65%;" data-highlight-theme="monokai"><pre class="actionscript"><code class="hljs"><span class="hljs-comment">// you define templated functions and types!</span>
+@:glueCppIncludes(<span class="hljs-string">'Templates/SharedPointer.h'</span>)
+@:uextern extern <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TSharedPtr</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  @:global
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MakeShareable</span>&lt;<span class="hljs-title">T</span>&gt;<span class="hljs-params">(ptr:PPtr&lt;T&gt;)</span>:TSharedPtr&lt;<span class="hljs-title">T</span>&gt;</span>;
+
+  <span class="hljs-comment">/**
+   * Constructs an empty shared pointer
+   */</span>
+  @:uname(<span class="hljs-string">'.ctor'</span>) <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>&lt;<span class="hljs-title">T</span>&gt;<span class="hljs-params">()</span>:TSharedPtr&lt;<span class="hljs-title">T</span>&gt;</span>;
+  <span class="hljs-comment">/* snip ... */</span>
+}
+
+<span class="hljs-comment">// you can also define C++ enums!</span>
+@:glueCppIncludes(<span class="hljs-string">"IHttpRequest.h"</span>)
+@:uname(<span class="hljs-string">"EHttpRequestStatus.Type"</span>)
+@:uextern extern enum EHttpRequestStatus {
+  NotStarted;
+  Processing;
+  Failed;
+  Succeeded;
+}
+
+<span class="hljs-comment">// and delegates! Yes you can bind normal Haxe functions to them</span>
+@:glueCppIncludes(<span class="hljs-string">"IHttpRequest.h"</span>)
+@:uname(<span class="hljs-string">'FHttpRequestCompleteDelegate'</span>)
+typedef FHttpRequestCompleteDelegate = Delegate&lt;FHttpRequestCompleteDelegate, TSharedPtr&lt;IHttpRequest&gt;-&gt;TThreadSafeSharedPtr&lt;IHttpResponse&gt;-&gt;Bool-&gt;Void&gt;;
+
+<span class="hljs-comment">// also C++ method pointers:</span>
+<span class="hljs-comment">/**
+ * Binds a delegate function to an Action defined in the project settings.
+ * Returned reference is only guaranteed to be valid until another action is bound.
+*/</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">BindAction</span><span class="hljs-params">(actionName:Const&lt;FName&gt;, keyEvent:EInputEvent, object:UObject, func:MethodPointer&lt;UObject,Void-&gt;Void&gt;)</span> : PRef&lt;<span class="hljs-title">FInputActionBinding</span>&gt;</span>;
+
+
+<span class="hljs-comment">// also some operators are supported</span>
+@:glueCppIncludes(<span class="hljs-string">"Array.h"</span>)
+@:uextern @:noCopy extern <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TIndexedContainerIterator</span>&lt;<span class="hljs-title">Ar</span>, <span class="hljs-title">El</span>, <span class="hljs-title">Ind</span>&gt; </span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">op_Increment</span><span class="hljs-params">()</span> : Void</span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">op_Decrement</span><span class="hljs-params">()</span> : Void</span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">op_Dereference</span><span class="hljs-params">()</span> : PRef&lt;<span class="hljs-title">El</span>&gt;</span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">op_Not</span><span class="hljs-params">()</span> : Bool</span>;
+}</code></pre></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="6b100010fd1e8061d24bcbeb3b89a93e"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 22px; height: auto;" data-block-id="310a2b00870e6bddc6fa21a34eaa5b34"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Static/Scripts</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 852px; height: 542px; left: 54px; top: 140px;" data-block-id="8dff900cfcb9a806632ad15c35d59aa0"><div class="sl-block-content" style="z-index: 12; font-size: 65%;" data-highlight-theme="monokai"><pre class="actionscript"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">package</span> <span class="hljs-title">platformer</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">unreal</span>.*;
+
+<span class="hljs-title">using</span> <span class="hljs-title">unreal</span>.<span class="hljs-title">CoreAPI</span>;
+
+// <span class="hljs-title">define</span> <span class="hljs-title">a</span> <span class="hljs-title">new</span> <span class="hljs-title">delegate</span>
+<span class="hljs-title">typedef</span> <span class="hljs-title">FRoundFinishedDelegate</span> = <span class="hljs-title">DynamicMulticastDelegate</span>&lt;<span class="hljs-title">FRoundFinishedDelegate</span>, <span class="hljs-title">Void</span>-&gt;<span class="hljs-title">Void</span>&gt;;
+
+// <span class="hljs-title">you</span> <span class="hljs-title">can</span> <span class="hljs-title">define</span> <span class="hljs-title">your</span> <span class="hljs-title">own</span> <span class="hljs-title">UENUMs</span> <span class="hljs-title">through</span> <span class="hljs-title">Haxe</span> - <span class="hljs-title">which</span> <span class="hljs-title">can</span> <span class="hljs-title">be</span> <span class="hljs-title">used</span> <span class="hljs-title">by</span> <span class="hljs-title">C</span>++!
+@:<span class="hljs-title">uenum</span>
+<span class="hljs-title">enum</span> <span class="hljs-title">EGameState</span> {</span>
+  Intro;
+  Waiting;
+  Playing;
+  Finished;
+  Restarting;
+}
+
+@:uclass
+<span class="hljs-comment">// you can use @:uname to define the target name, without having to use that</span>
+@:uname(<span class="hljs-string">"APlatformerGameMode"</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GameMode</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AGameMode</span> </span>{
+  <span class="hljs-keyword">var</span> someHaxeArray:Array&lt;String&gt;;
+  <span class="hljs-keyword">var</span> someUnrealArray:TArray&lt;Int8&gt;;
+  @:uexpose <span class="hljs-keyword">var</span> someExposedUnrealArray:TArray&lt;FString&gt;;
+
+  <span class="hljs-comment">/** delegate to broadcast about finished round */</span>
+  @:uproperty(BlueprintAssignable)
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> OnRoundFinished:FRoundFinishedDelegate;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">someHaxeFunction</span><span class="hljs-params">(json:{ name:String, age:Int })</span>:Void </span>{ <span class="hljs-comment">/* ... */</span> }
+
+  @:uexpose <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">someUnrealFunction</span><span class="hljs-params">(char:Character, basicType:Bool)</span>:Void </span>{ <span class="hljs-comment">/* ... */</span> }
+  <span class="hljs-comment">/* snip .. */</span>
+}
+
+@:uclass(Abstract)
+@:uname(<span class="hljs-string">"APlatformerCharacter"</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Character</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ACharacter</span> </span>{
+  <span class="hljs-comment">/** player pawn initialization */</span>
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">PostInitializeComponents</span><span class="hljs-params">()</span>:Void </span>{
+    <span class="hljs-keyword">super</span>.PostInitializeComponents();
+
+    SetActorRotation(FRotator.createWithValues(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>));
+  }
+  <span class="hljs-comment">/* snip ... */</span>
+}
+</code></pre></div></div></section></section><section style="display: none;" aria-hidden="true" class="stack future" data-id="b60d2b12e129d078b5aed6ee1bb02701" hidden=""><section style="display: none;" data-id="e44dd9c3fb1aa7661e688a632213d9e5"><div class="sl-block" data-block-type="text" style="width: 900px; left: 30px; top: 58px; height: auto;" data-block-id="9fa74822bcac44ce80cb4dff38d676f6"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left;" data-placeholder-text="Text">
+<h1>Unreal Types</h1>
+</div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="74313f2668623aa6bcd512f1878d87f9"><div class="sl-block" data-block-type="text" style="width: 410px; left: 49px; top: 103px; height: auto;" data-block-id="6601a7684448520b85835738fb32d6e9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>UObjects</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 49px; top: 200px; height: auto;" data-block-id="abaac84f7aab7ad0dface92ee4d4c667"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Always have special reflection metadata</li>
+	<li class="fragment" data-fragment-index="2">Unreal garbage collection</li>
+	<li class="fragment" style="color:rgb(255, 255, 255)" data-fragment-index="4">Virtual functions, always pointers</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 499px; top: 103px; height: auto;" data-block-id="d140d75e7a9e2a896f04d86aaac5976e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12;">
+<h2>"Structs"</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 499px; top: 200px; height: auto;" data-block-id="d96f6ac8af558a9c10323b1f4129800b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 13;">
+<ul>
+	<li class="fragment" data-fragment-index="1">May have reflection metadata (USTRUCT)</li>
+	<li class="fragment" data-fragment-index="3">Manual management</li>
+	<li class="fragment" style="color:rgb(255, 255, 255)" data-fragment-index="5">May be accessed by value or by reference/pointer</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 6px;" data-block-id="3fe527f8b6329285edc91d527f5684ed"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<h1>in c++</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 402px; height: 276px; left: 78px; top: 420px;" data-block-id="43363fc1a9a4668b1a48a2a9c006cbfe"><div class="sl-block-content fragment" style="z-index: 15; font-size: 65%;" data-highlight-theme="monokai" data-fragment-index="6"><pre class="cpp"><code class="hljs"><span class="hljs-comment">// Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> once</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">"PlatformerClimbMarker.generated.h"</span></span>
+
+UCLASS(Blueprintable)
+<span class="hljs-keyword">class</span> APlatformerClimbMarker : <span class="hljs-keyword">public</span> AActor
+{
+	GENERATED_UCLASS_BODY()
+
+<span class="hljs-keyword">private</span>:
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category=Mesh, meta=(AllowPrivateAccess=<span class="hljs-string">"true"</span>))
+	UStaticMeshComponent* Mesh;
+
+<span class="hljs-keyword">public</span>:
+	<span class="hljs-comment">/** Returns Mesh subobject **/</span>
+	<span class="hljs-function">FORCEINLINE UStaticMeshComponent* <span class="hljs-title">GetMesh</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> Mesh; }
+};</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 402px; height: 276px; left: 499px; top: 420px;" data-block-id="3a62572fd825e0505babe1d31a689895"><div class="sl-block-content fragment" style="z-index: 17; font-size: 65%;" data-highlight-theme="monokai" data-fragment-index="7"><pre class="cpp"><code class="hljs"><span class="hljs-keyword">class</span> FPlatformerMessageData
+{
+	<span class="hljs-comment">/** text to display */</span>
+	FString Message;
+
+	<span class="hljs-comment">/** how long this FMessageData will be displayed in seconds */</span>
+	<span class="hljs-keyword">float</span> DisplayDuration;
+
+	<span class="hljs-comment">/** TimeSeconds when this FMessageData was first shown */</span>
+	<span class="hljs-keyword">float</span> DisplayStartTime;
+
+	<span class="hljs-comment">/** x axis position on screen &lt;0, 1&gt; (0 means left side of the screen) ; text will be centered */</span>
+	<span class="hljs-keyword">float</span> PosX;
+
+	<span class="hljs-comment">/** y axis position on screen &lt;0, 1&gt; (0 means top of the screen) ; text will be centered */</span>
+	<span class="hljs-keyword">float</span> PosY;
+
+	<span class="hljs-comment">/** text scale */</span>
+	<span class="hljs-keyword">float</span> TextScale;
+
+	<span class="hljs-comment">/** if red border should be drawn instead of blue */</span>
+	<span class="hljs-keyword">bool</span> bRedBorder;
+};
+</code></pre></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="795392f0fbb6b38ad844b4bfc6e4cb81"><div class="sl-block" data-block-type="text" style="width: 410px; left: 49px; top: 103px; height: auto;" data-block-id="aac8a8dc0867e8005e04758394e38b0f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>UObjects</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 49px; top: 200px; height: auto;" data-block-id="5b4b4a712bb54fb144f5fb171d678125"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;" dir="ui">
+<ul>
+	<li class="fragment" data-fragment-index="0">Still depend on @:uproperty metas :(</li>
+	<li class="fragment" data-fragment-index="1">All Haxe types are weak pointers - no crash :)</li>
+	<li class="fragment" data-fragment-index="3">Normal hxcpp wrapper: can be cast, interfaces...</li>
+	<li class="fragment" data-fragment-index="5">Unreal.hx knows that it's accessed via pointer</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 499px; top: 103px; height: auto;" data-block-id="97b37bbb38c40a4b76ed4324e5ad1dfd"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12;">
+<h2>"Structs"</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 443px; left: 499px; top: 200px; height: auto;" data-block-id="d0e1bcfc5a7b9042e3531a7034deffad"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 13;">
+<ul>
+	<li class="fragment" data-fragment-index="2">If haxe created the type,
+it can be gc'd :) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</li>
+	<li class="fragment" data-fragment-index="4">External pointers don't need wrappers!</li>
+	<li class="fragment" data-fragment-index="6">Need to specify how the C++ type is accessed</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 6px;" data-block-id="c91879c3f39cac3a21a1887e3f0f60fc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<h1>in Haxe</h1>
+</div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="485049296828aa2ca1ef6d8c8efb59ac"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 43px; height: auto;" data-block-id="01acee2e35d00e25a4ed88f93a6d69cc"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>"Struct" types</h1>
+</div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; min-width: 120px; min-height: 30px; width: 823px; left: 80px; top: 275px;" data-block-id="906e0c8e737b08d4b28dc529b6686808"><div class="sl-block-content" style="z-index: 12;" data-table-cols="2" data-table-rows="6" data-table-padding="5px"><table><tbody>
+<tr>
+<th>C++</th>
+<th>Haxe</th>
+</tr>
+<tr>
+<td>FSomeStruct</td>
+<td>FSomeStruct</td>
+</tr>
+<tr>
+<td>FSomeStruct&amp;</td>
+<td>PRef&lt;FSomeStruct&gt;</td>
+</tr>
+<tr>
+<td>FSomeStruct *</td>
+<td>PPtr&lt;FSomeStruct&gt; or POwnedPtr&lt;FSomeStruct&gt;</td>
+</tr>
+<tr>
+<td>const FSomeStruct&amp;</td>
+<td>Const&lt;PRef&lt;FSomeStruct&gt;&gt;</td>
+</tr>
+<tr>
+<td>FSomeStruct **</td>
+<td>&lt;not supported... yet&gt;</td>
+</tr>
+</tbody></table></div></div></section></section><section style="display: none;" class="future" aria-hidden="true" data-id="4d12a00649a0d50a545f111dc5532b61" hidden=""><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 43px; height: auto;" data-block-id="0e81e89b3bc53f0730c2c8840225d69b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Future plans</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 210px;" data-block-id="407abb2b2cc5a9f93286d15e47999628"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;" dir="ui">
+<ul>
+	<li class="fragment" data-fragment-index="0">Use Unreal hooks to build the project</li>
+	<li class="fragment" data-fragment-index="1">Fix Unreal header includes</li>
+	<li class="fragment" data-fragment-index="2">Optimize C++ build speed</li>
+	<li class="fragment" data-fragment-index="3">Cppia generate UClasses, UFunctions and UProperties directly</li>
+	<li class="fragment" data-fragment-index="4">General Pointer type</li>
+	<li class="fragment" data-fragment-index="5">Automatically generate all C++ types externs</li>
+	<li class="fragment" data-fragment-index="6">General incremental support</li>
+</ul>
+</div></div></section><section style="display: none;" class="future" aria-hidden="true" data-id="74c8e86e9b63e96f78165949d419eff3" hidden=""><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 43px; height: auto;" data-block-id="69dfbce17089a04adbe5c4df258e73f0"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Cppia</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 776px; left: 92px; top: 191px;" data-block-id="55e031e34dbf165fb61ed65bf3b16e04"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
+<ul>
+	<li>HXCPP-compatible virtual machine</li>
+	<li class="fragment" data-fragment-index="0">Compiles in a couple of seconds</li>
+	<li class="fragment" data-fragment-index="1">Allows the creation of live functions, that can be reloaded in the same play-in-editor session!</li>
+	<li class="fragment" data-fragment-index="2">Still needs a full C++ recompilation if a UPROPERTY, UFUNCTION, or a new UCLASS is declared/renamed</li>
+</ul>
+</div></div></section><section style="display: none;" aria-hidden="true" class="stack future" data-id="94d615ba77766cac07820649bf8401fb" hidden=""><section style="display: none;" data-id="be26b0da90ccd20a1387e89029cd6e88"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 43px; height: auto;" data-block-id="69a9da8df70fe3647a23a9cfd6030443"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Resources!</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 528px; left: 92px; top: 191px;" data-block-id="fc639db914dd3f12dab31c1dddbf13f1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Unreal C++ documentation</li>
+	<li class="fragment" data-fragment-index="1">Unreal.hx documentation at github wiki page!</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 263.268px; height: 520px; left: 640px; top: 150px;" data-block-id="f4c3dd3cf42b2fa192e0b78bc8792918"><div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="2"><img data-natural-width="282" data-natural-height="557" data-src="Screenshot_from_2016-05-23_10-48-39.png"></div></div></section><section style="display: none;" aria-hidden="true" class="future" data-id="6e004f874a9992a32bd912d9c5a0bbb3"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 43px; height: auto;" data-block-id="2580a484f47d1370103b641b9276f2da"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Resources!</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 788px; left: 92px; top: 141px;" data-block-id="e1e760025b21564510644389f8751b2c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
+<ul>
+	<li class="">Platformer Game sample project: waneck/HaxePlatformerGame</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 383.841px; height: 115px; left: 289px; top: 223px;" data-block-id="1814b4de7a1085394743cc78196efb8a"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="504" data-natural-height="151" data-src="Screenshot_from_2016-05-23_10-51-41.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 788px; left: 92px; top: 356px;" data-block-id="1c6be3df616e000a4f8b23f261aa0aec"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; text-align: left;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Check the commit history!</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 734.63px; height: 271px; left: 93px; top: 408px;" data-block-id="d72fef353d39fbf286fc218abc211295"><div class="sl-block-content fragment" style="z-index: 15;" data-fragment-index="1"><img data-natural-width="1003" data-natural-height="370" data-src="Screenshot_from_2016-05-23_10-52-36.png"></div></div></section></section><section style="display: none;" class="future" aria-hidden="true" data-id="ad46ed59b8158a47074d5d979391ee06" hidden=""><div class="sl-block" data-block-type="text" style="width: 900px; left: 30px; top: 58px; height: auto;" data-block-id="b3f61c9ef96cd09f00f3dedfeeb188d7"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<h1 style="text-align: center;">Questions?</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 249.057px; height: 198px; left: 356px; top: 362px;" data-block-id="cdbf558aeed4c390cdef43e96c6fc87a"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="200" data-natural-height="159" data-src="questions.png"></div></div></section>
+				</div>
+			<div class="backgrounds"><div data-loaded="true" style="display: block;" class="slide-background present"></div><div data-loaded="true" style="display: block;" class="slide-background future"></div><div data-loaded="true" style="display: block;" class="slide-background stack future"><div data-loaded="true" style="display: block;" class="slide-background present"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div></div><div style="display: none;" class="slide-background stack future"><div style="display: none;" class="slide-background present"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div></div><div style="display: none;" class="slide-background stack future"><div style="display: none;" class="slide-background present"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div></div><div style="display: none;" class="slide-background stack future"><div style="display: none;" class="slide-background present"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div></div><div style="display: none;" class="slide-background stack future"><div style="display: none;" class="slide-background present"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background future"></div><div style="display: none;" class="slide-background stack future"><div style="display: none;" class="slide-background present"></div><div style="display: none;" class="slide-background future"></div></div><div style="display: none;" class="slide-background future"></div></div><div style="display: block;" class="progress"><span style="width: 0px;"></span></div><aside style="display: block;" class="controls"><div class="navigate-left"></div><div class="navigate-right enabled"></div><div class="navigate-up"></div><div class="navigate-down"></div></aside><div style="display: none;" class="slide-number"></div><div data-prevent-swipe="" class="speaker-notes"></div><div class="pause-overlay"></div><div aria-atomic="true" aria-live="polite" id="aria-status-div" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">
+Unreal.hx
+
+
+Using Haxe with the Unreal Engine 4
+
+https://bit.ly/unrealhx
+
+
+By Cauê Waneck ( @cwaneck )
+</div></div>
+		</div>
+	</div>
+<script>
+	var SLConfig = {"deck":{"id":706787,"slug":"unreal-hx","title":"Unreal.hx","description":"","visibility":"all","published_at":"2016-05-20T19:12:25.804Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/a4e82d49157a9ebd80e04f7c2d122818/thumb.jpg","view_count":41,"user":{"id":516229,"username":"cauewaneck","name":"Cauê Waneck","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-cO_OS7SSJt8/AAAAAAAAAAI/AAAAAAAAAOQ/JKWHSZw6lLg/photo.jpg?sz=50","pro":false,"team_id":null,"settings":{"id":358960,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"opensans","theme_color":"black-orange","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":null,"slide_number":null,"rtl":false,"version":2,"collaborative":true,"deck_user_editor_limit":1,"data_updated_at":null}};
+</script>
+    <script defer="defer" src="application-58b893ca4a5690f867eba7219597ef55.js"></script>
+    	<script defer="defer" src="reveal.js"></script>
+
+
+
+
+
+<script src="highlight-9efb98b823ef2e51598faabaa51da5be.js" type="text/javascript"></script></body></html>
